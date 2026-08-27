@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PolicyGuesser | La'Tahvia Williams</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --crimson: #8B1A2A;
+            --crimson-deep: #5C0F1B;
+            --crimson-bright: #C41E3A;
+            --cream: #F5F0E8;
+            --cream-dark: #EDE5D8;
+            --ink: #1A1410;
+            --ink-light: #5C544A;
+            --white: #FDFAF6;
+            --transition: cubic-bezier(0.76, 0, 0.24, 1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            background: var(--cream);
+            color: var(--ink);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { color: inherit; text-decoration: none; }
+
+        nav {
+            position: fixed; top: 0; left: 0; right: 0;
+            padding: 1.5rem 5%;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(245,240,232,0.85);
+            backdrop-filter: blur(12px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(139,26,42,0.1);
+        }
+        nav a { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 2px; }
+        nav a.back::before { content: '← '; color: var(--crimson); }
+
+        .hero {
+            padding: 10rem 5% 6rem;
+            background: linear-gradient(135deg, #0c2461 0%, #1a4480 50%, #1e7a78 100%);
+            color: var(--white);
+        }
+        .hero-inner { max-width: 1100px; margin: 0 auto; }
+        .hero .category {
+            font-size: 0.78rem; text-transform: uppercase; letter-spacing: 4px;
+            color: rgba(255,255,255,0.95); margin-bottom: 2rem;
+        }
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            font-weight: 400; line-height: 1.05; margin-bottom: 1.5rem;
+        }
+        .hero h1 em { font-style: italic; color: #ffd980; }
+        .hero .subtitle {
+            font-size: 1.1rem; max-width: 720px;
+            color: rgba(255,255,255,0.97); font-weight: 300;
+        }
+        .hero-meta {
+            display: flex; gap: 3rem; margin-top: 3.5rem;
+            border-top: 1px solid rgba(255,255,255,0.45); padding-top: 2rem;
+        }
+        .hero-meta div p:first-child {
+            font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px;
+            color: rgba(255,255,255,0.97); margin-bottom: 0.4rem;
+        }
+        .hero-meta div p:last-child { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; }
+
+        section.body { padding: 6rem 5%; }
+        .body-inner { max-width: 880px; margin: 0 auto; }
+
+        .section-label {
+            font-size: 0.72rem; text-transform: uppercase; letter-spacing: 3px;
+            color: var(--crimson); margin-bottom: 1rem;
+        }
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3rem); font-weight: 400;
+            margin-bottom: 1.5rem; line-height: 1.15;
+        }
+        h2 em { font-style: italic; color: var(--crimson); }
+        h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem; font-weight: 500;
+            margin: 2.5rem 0 0.8rem; color: var(--ink);
+        }
+        p { margin-bottom: 1.2rem; color: var(--ink-light); }
+        ul { margin: 1rem 0 1.5rem 1.5rem; color: var(--ink-light); }
+        li { margin-bottom: 0.6rem; }
+
+        .feature-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem; margin: 2.5rem 0;
+        }
+        .feature-card {
+            background: var(--white);
+            padding: 2rem; border: 1px solid rgba(139,26,42,0.12);
+            transition: transform 0.4s var(--transition), border-color 0.4s var(--transition);
+        }
+        .feature-card:hover { transform: translateY(-4px); border-color: var(--crimson); }
+        .feature-card h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem; font-weight: 500; margin-bottom: 0.6rem; color: var(--ink);
+        }
+        .feature-card p { font-size: 0.92rem; margin: 0; }
+
+        .tech-stack {
+            display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0 2rem;
+        }
+        .tech-tag {
+            padding: 0.35rem 0.95rem;
+            border: 1px solid rgba(139,26,42,0.3);
+            color: var(--crimson);
+            font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.2px;
+            border-radius: 100px;
+        }
+
+        .cta {
+            background: var(--ink); color: var(--white);
+            padding: 5rem 5%; text-align: center;
+        }
+        .cta h2 { color: var(--white); margin-bottom: 1.5rem; }
+        .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
+        .btn {
+            padding: 1rem 2.2rem;
+            font-size: 0.78rem; text-transform: uppercase; letter-spacing: 2px;
+            border: 1px solid var(--white);
+            transition: background 0.3s var(--transition), color 0.3s var(--transition);
+        }
+        .btn:hover { background: var(--white); color: var(--ink); }
+        .btn.primary { background: var(--crimson); border-color: var(--crimson); }
+        .btn.primary:hover { background: var(--crimson-bright); border-color: var(--crimson-bright); color: var(--white); }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="back">Back to Portfolio</a>
+        <a href="https://github.com/Tahvia127" target="_blank">GitHub</a>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-inner">
+            <p class="category">Interactive · Civic Tech</p>
+            <h1>PolicyGuesser:<br><em>Would You Have Voted Yes?</em></h1>
+            <p class="subtitle">An interactive web game built on real United Nations Security Council and General Assembly resolutions. Players read a plain-English summary, see who argued for and against, cast a vote, and watch the actual country-by-country outcome animate on a D3 world map.</p>
+            <div class="hero-meta">
+                <div><p>Role</p><p>Solo build</p></div>
+                <div><p>Timeline</p><p>Summer 2026 · 6 weeks</p></div>
+                <div><p>Showcase</p><p>UChicago Tech Showcase</p></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="body">
+        <div class="body-inner">
+            <p class="section-label">Overview</p>
+            <h2>Translating diplomacy into a <em>game loop</em>.</h2>
+            <p>Most people have no idea how the UN actually works. The information is public — but the format is dense and designed for diplomats. PolicyGuesser closes that gap by turning real resolutions into a fast, surprising, shareable experience. The learning happens through plot twists: discovering the U.S. voted against a resolution condemning nuclear weapons, or that an obviously-good resolution failed because of a single veto.</p>
+
+            <h3>Core game loop</h3>
+            <ul>
+                <li>Resolution card with a plain-English summary, no jargon.</li>
+                <li>Country positions visualized on an interactive D3 world map.</li>
+                <li>Player votes Yes, No, or Abstain.</li>
+                <li>Outcome reveal animates the real country-by-country breakdown.</li>
+                <li>"What happened next" card explains the real-world consequence.</li>
+            </ul>
+
+            <h3>Engagement mechanics</h3>
+            <div class="feature-grid">
+                <div class="feature-card"><h4>Streaks &amp; Tiers</h4><p>Difficulty modes from beginner outcomes to expert controversial splits.</p></div>
+                <div class="feature-card"><h4>Daily Challenge</h4><p>One featured resolution a day, with a global leaderboard.</p></div>
+                <div class="feature-card"><h4>Country Profiles</h4><p>Click any nation to see its full UN voting history.</p></div>
+                <div class="feature-card"><h4>Shareable Cards</h4><p>"I voted with the U.S. 80% of the time" — built for social.</p></div>
+            </div>
+
+            <h3>Data sources</h3>
+            <p>UN Bibliographic Information System (UNBIS), the UN Digital Library API, the Voeten dataset on UN voting (Harvard Dataverse), and ACLED for post-resolution conflict events. All public.</p>
+
+            <h3>Tech stack</h3>
+            <div class="tech-stack">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">D3.js</span>
+                <span class="tech-tag">Tailwind</span>
+                <span class="tech-tag">Django REST</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">AWS (EC2, S3, RDS)</span>
+                <span class="tech-tag">Figma</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Want to see it in action?</h2>
+        <p style="color: rgba(255,255,255,0.97); max-width: 540px; margin: 0 auto;">The playable build ships at the end of July 2026. In the meantime, the architecture and data pipeline live on GitHub.</p>
+        <div class="cta-buttons">
+            <a href="https://github.com/Tahvia127" target="_blank" class="btn primary">View on GitHub</a>
+            <a href="index.html" class="btn">Back to Portfolio</a>
+        </div>
+    </section>
+</body>
+</html>

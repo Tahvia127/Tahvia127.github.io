@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentenced Differently | La'Tahvia Williams</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="project-styles.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <nav aria-label="Site navigation">
+        <a href="index.html" class="nav-logo">La'Tahvia Williams</a>
+        <div class="nav-links">
+            <a href="index.html">Portfolio</a>
+        </div>
+    </nav>
+
+    <header class="hero" id="main-content">
+        <div class="hero-inner">
+            <p class="category">Criminal Justice · Statistics</p>
+            <h1>Sentenced Differently:<br><em>Disparities in Federal Sentencing</em></h1>
+            <p class="subtitle">A replication and extension of the U.S. Sentencing Commission's disparity research, using five years of individual offender data to test whether race and gender still predict sentence length after controlling for every legally relevant factor.</p>
+            <div class="hero-meta">
+                <div class="hero-meta-item">
+                    <p class="hero-meta-label">Role</p>
+                    <p class="hero-meta-value">Project Manager · Tech Lead</p>
+                </div>
+                <div class="hero-meta-item">
+                    <p class="hero-meta-label">Team</p>
+                    <p class="hero-meta-value">3 (PM + 2 researchers)</p>
+                </div>
+                <div class="hero-meta-item">
+                    <p class="hero-meta-label">Data</p>
+                    <p class="hero-meta-value">USSC FY2020–FY2024</p>
+                </div>
+                <div class="hero-meta-item">
+                    <p class="hero-meta-label">Sample</p>
+                    <p class="hero-meta-value">~300,000 cases</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content-body" class="body-section">
+        <div class="body-inner">
+            <p class="section-label">Why It Matters</p>
+            <h2>The guidelines were built to <em>eliminate</em> disparity. They didn't.</h2>
+            <p>The USSC's own 2023 report found that Black males received sentences 13.4% longer than White males, and Hispanic males 11.2% longer, after controlling for available legal factors. This project replicates that finding with newer data, then digs into where the disparities actually concentrate — the incarceration decision itself, sentence length conditional on incarceration, or specific offense categories.</p>
+
+            <div class="stat-row">
+                <div class="stat"><span class="num">300K+</span><span class="label">Federal Cases</span></div>
+                <div class="stat"><span class="num">5 yrs</span><span class="label">FY2020–FY2024</span></div>
+                <div class="stat"><span class="num">4</span><span class="label">Regression Models</span></div>
+                <div class="stat"><span class="num">2-stage</span><span class="label">Analysis</span></div>
+            </div>
+
+            <h3>Research questions</h3>
+            <ul>
+                <li>Do race and gender independently predict sentence length after legal controls?</li>
+                <li>Does the race × gender interaction reveal compounding disparities?</li>
+                <li>Which offense categories (drugs, firearms, fraud, immigration) show the largest residual gaps?</li>
+                <li>Are disparities concentrated in the prison-vs-probation decision, or in sentence length among the incarcerated?</li>
+            </ul>
+
+            <h3>Methodology</h3>
+            <ul>
+                <li>Log-linear OLS with offense level, criminal history, guideline range, mandatory minimums, plea, and acceptance of responsibility as controls.</li>
+                <li>District and fiscal-year fixed effects.</li>
+                <li>Two-stage analysis: logistic regression on incarceration decision, then log-linear on length conditional on incarceration.</li>
+                <li>Robustness: VIF, Cook's distance, robust SEs, sensitivity to mandatory-minimum subsets, life-sentence handling.</li>
+            </ul>
+
+            <h3>Deliverables</h3>
+            <ul>
+                <li>Executed Jupyter notebook</li>
+                <li>Single-page interactive HTML dashboard with disparity calculator</li>
+                <li>Multi-page project website (overview, methodology, findings, data explorer)</li>
+                <li>Written report with literature comparison and policy implications</li>
+            </ul>
+
+            <h3>Tech stack</h3>
+            <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">pandas</span>
+                <span class="tech-tag">statsmodels</span>
+                <span class="tech-tag">pyreadstat</span>
+                <span class="tech-tag">scipy</span>
+                <span class="tech-tag">Altair</span>
+                <span class="tech-tag">Chart.js</span>
+            </div>
+        </div>
+    </main>
+
+    <section class="cta">
+        <h2>Want to dig into the data?</h2>
+        <p>The full notebook, dashboard, and disparity calculator live on GitHub.</p>
+        <div class="cta-buttons">
+            <a href="https://github.com/Tahvia127" target="_blank" rel="noopener noreferrer" class="btn primary">View on GitHub</a>
+            <a href="index.html" class="btn">Back to Portfolio</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 La'Tahvia Williams &middot; <a href="mailto:williamstahvia@gmail.com">williamstahvia@gmail.com</a></p>
+        <p style="margin-top:0.5rem;"><a href="index.html" style="font-size:0.78rem;text-transform:uppercase;letter-spacing:2px;">Back to Portfolio</a></p>
+    </footer>
+</body>
+</html>

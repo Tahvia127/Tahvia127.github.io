@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Aid Analysis | La'Tahvia Williams</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="project-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <nav aria-label="Site navigation">
+        <a href="index.html" class="nav-logo">La'Tahvia Williams</a>
+        <div class="nav-links">
+            <a href="index.html">Portfolio</a>
+        </div>
+    </nav>
+
+    <header class="hero" id="main-content">
+        <div class="hero-inner">
+            <p class="category">Policy Research · Data Journalism</p>
+            <h1>Financial Aid Analysis:<br><em>UChicago vs. Elite Peer Institutions</em></h1>
+            <p class="subtitle">Comparing UChicago's financial aid competitiveness across elite peer institutions — combining data analysis with investigative journalism to answer what families actually pay.</p>
+            <div class="hero-meta">
+                <div class="hero-meta-item">
+                    <p class="hero-meta-label">Publication</p>
+                    <p class="hero-meta-value">The Chicago Maroon</p>
+                </div>
+                <div class="hero-meta-item">
+                    <p class="hero-meta-label">Type</p>
+                    <p class="hero-meta-value">Investigative Journalism</p>
+                </div>
+                <div class="hero-meta-item">
+                    <p class="hero-meta-label">Year</p>
+                    <p class="hero-meta-value">2024–25</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content-body" class="body-section">
+        <div class="body-inner">
+            <p class="section-label">Investigation Overview</p>
+            <h2>Does UChicago's aid program <em>actually</em> create comparable affordability?</h2>
+            <p>
+                As college costs continue to rise, prospective students and families increasingly rely on financial aid
+                packages to make higher education affordable. But how does the University of Chicago's financial aid
+                really compare to its elite peer institutions? This investigative piece for The Chicago Maroon combines
+                data analysis with policy journalism to answer that critical question.
+            </p>
+            <p>
+                By analyzing comprehensive financial aid data across UChicago and eight comparable institutions—including
+                Harvard, Yale, Princeton, Stanford, MIT, Penn, Duke, and Johns Hopkins—I uncovered surprising insights about
+                accessibility, aid generosity, and how UChicago positions itself in the competitive landscape of elite
+                higher education.
+            </p>
+
+            <div class="highlight-box">
+                <h3>Key Research Question</h3>
+                <p>
+                    Despite UChicago's higher sticker price ($71,325 tuition) compared to most peer institutions, does
+                    its financial aid program ensure comparable affordability for low and middle-income students?
+                </p>
+            </div>
+
+            <h2>Key Findings</h2>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">9</span>
+                    <span class="stat-label">Institutions Analyzed</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">$71K</span>
+                    <span class="stat-label">UChicago Tuition (Highest)</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">$82K</span>
+                    <span class="stat-label">Average UChicago Aid (Highest)</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">60%</span>
+                    <span class="stat-label">Students Receiving Aid</span>
+                </div>
+            </div>
+
+            <div class="findings-list">
+                <div class="finding-item">
+                    <strong>Competitive Net Price for Low-Income Students:</strong> UChicago's net price of $21,500
+                    is only $3,600 higher than Harvard/MIT, demonstrating that despite higher tuition, financial aid
+                    creates comparable affordability for families earning under $65K.
+                </div>
+                <div class="finding-item">
+                    <strong>Middle-Income Affordability Gap:</strong> For families earning $110K-$150K, UChicago offers
+                    "Free Tuition" while Harvard and MIT provide "Full Free" coverage (including room &amp; board), creating
+                    a $15K-$20K annual expected family contribution difference — $60K-$80K over four years.
+                </div>
+                <div class="finding-item">
+                    <strong>Income Threshold Comparison:</strong> UChicago's $125,000 free tuition threshold matches
+                    Princeton but trails Harvard/MIT ($200,000) and Stanford ($150,000), directly reflecting endowment
+                    resource constraints rather than institutional commitment.
+                </div>
+                <div class="finding-item">
+                    <strong>International Student Disparity:</strong> UChicago's need-aware admission policy for
+                    international students results in lower average aid ($65,118) compared to need-blind institutions
+                    Harvard ($78,900), MIT ($77,200), and Yale ($75,800).
+                </div>
+                <div class="finding-item">
+                    <strong>Endowment Impact:</strong> Harvard's $51 billion endowment ($7.0M per student) enables
+                    universal no-loan policies and higher income thresholds, while UChicago's $11 billion ($1.4M per
+                    student) creates structural constraints on middle-class aid expansion.
+                </div>
+            </div>
+
+            <h2>Interactive Data Visualizations</h2>
+
+            <div class="visualization-container">
+                <h3 class="viz-title">1. Net Price: What Families Actually Pay</h3>
+                <p class="viz-description">
+                    Average net price (total cost minus financial aid) that families actually pay at peer institutions.
+                    UChicago ranks third-lowest despite having the highest sticker price, demonstrating the effectiveness
+                    of its financial aid program for aided students. UChicago is highlighted in maroon.
+                </p>
+                <div id="netPriceChart" style="width: 100%; min-height: 350px;"></div>
+                <p style="font-size: 0.9rem; color: var(--ink-light); margin-top: 1rem; font-style: italic;">
+                    UChicago's net price of $21,500 is only $3,600 higher than Harvard/MIT but $7,000 lower than Penn/Duke,
+                    showing competitive middle-tier positioning.
+                </p>
+            </div>
+
+            <div class="visualization-container">
+                <h3 class="viz-title">2. Free Tuition Income Thresholds</h3>
+                <p class="viz-description">
+                    Family income level at which each institution commits to free or full-need tuition support.
+                    Higher thresholds indicate more generous middle-class aid policies, directly reflecting endowment
+                    capacity. UChicago is highlighted in maroon.
+                </p>
+                <div id="thresholdChart" style="width: 100%; min-height: 400px;"></div>
+                <p style="font-size: 0.9rem; color: var(--ink-light); margin-top: 1rem; font-style: italic;">
+                    The $75,000 gap between Harvard ($200K threshold) and UChicago ($125K) represents middle-income
+                    families who qualify for free tuition at Harvard but not at UChicago — a direct result of endowment differences.
+                </p>
+            </div>
+
+            <div class="visualization-container">
+                <h3 class="viz-title">3. Financial Aid Coverage by Family Income</h3>
+                <p class="viz-description">
+                    Interactive heatmap showing what type of financial aid coverage each institution provides across
+                    income brackets. Find your family's income level and compare aid policies across schools. This
+                    visualization reveals exactly where the "middle-income squeeze" occurs at each institution.
+                </p>
+
+                <div style="background: var(--cream-dark); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div style="width: 20px; height: 20px; background: #70AD47; border-radius: 3px;"></div>
+                            <span style="font-size: 0.9rem;">Full Free (No Loans)</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div style="width: 20px; height: 20px; background: #FFC000; border-radius: 3px;"></div>
+                            <span style="font-size: 0.9rem;">Free Tuition</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div style="width: 20px; height: 20px; background: #D9534F; border-radius: 3px;"></div>
+                            <span style="font-size: 0.9rem;">Aid with Loans</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div style="width: 20px; height: 20px; background: #D9D9D9; border-radius: 3px;"></div>
+                            <span style="font-size: 0.9rem;">Aid Available</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="heatmapChart" style="width: 100%; min-height: 450px;"></div>
+
+                <p style="font-size: 0.9rem; color: var(--ink-light); margin-top: 1rem; font-style: italic;">
+                    Notice where each school transitions from green to yellow to red. Princeton maintains green (full free)
+                    through $200K income, while UChicago switches to yellow at $60K and red above $200K. This visualization
+                    shows exactly where middle-income families face the "aid gap."
+                </p>
+            </div>
+
+            <h2>Methodology</h2>
+
+            <div class="methodology-box">
+                <h3>Data Collection</h3>
+                <p>
+                    <strong>Primary Sources:</strong> Institutional Common Data Set (CDS) filings for 2024-25 academic year,
+                    IPEDS (Integrated Postsecondary Education Data System) databases, university financial aid websites,
+                    and direct communication with financial aid offices.
+                </p>
+                <p>
+                    <strong>Policy Documentation:</strong> Analyzed detailed financial aid policies including income
+                    thresholds for no-loan programs, expected family contribution calculations, treatment of home equity,
+                    small business assets, and non-custodial parent income across all nine institutions.
+                </p>
+                <p>
+                    <strong>Student Interviews:</strong> Conducted confidential interviews with 25+ UChicago students
+                    from varying income backgrounds to understand real-world experiences navigating the financial aid
+                    process and comparing offers across institutions.
+                </p>
+            </div>
+
+            <h3>Analysis Approach</h3>
+            <p>
+                <strong>Comparative Metrics:</strong> Standardized comparison across institutions required normalizing
+                for geographic cost-of-living differences, academic calendar variations (quarter vs. semester systems),
+                and institutional definitions of demonstrated "need."
+            </p>
+            <p>
+                <strong>Scenario Modeling:</strong> Created hypothetical family profiles across income quintiles
+                ($0-40K, $40-65K, $65-110K, $110-150K, $150K+, $200K+) to model expected aid packages at each institution
+                using published net price calculators and policy documentation.
+            </p>
+            <p>
+                <strong>Data Visualization:</strong> Developed interactive charts using Vega-Lite, Python (Altair), and
+                Pandas to illustrate cost comparisons, aid package composition, and income-based coverage patterns
+                across the competitive landscape.
+            </p>
+
+            <h2>Implications for Prospective Students</h2>
+
+            <div class="highlight-box">
+                <h3>For Low-Income Students (family income &lt;$65K)</h3>
+                <p>
+                    UChicago's aid packages are highly competitive with Ivy League peers. Most students in this bracket
+                    will face similar net costs (often $0-$5,000 annually) across all nine institutions. Focus comparison
+                    on non-financial factors: academic fit, campus culture, location preferences, and specific program
+                    strengths.
+                </p>
+            </div>
+
+            <div class="highlight-box">
+                <h3>For Middle-Income Families ($110K-$150K)</h3>
+                <p>
+                    Calculate net costs carefully using each institution's calculator. Harvard, MIT, and Stanford may
+                    offer $10,000-$20,000 lower annual costs due to more generous middle-class initiatives. Consider
+                    the 4-year cumulative difference: $40,000-$80,000 in total savings could significantly impact
+                    post-graduation financial flexibility.
+                </p>
+            </div>
+
+            <div class="highlight-box">
+                <h3>For International Students</h3>
+                <p>
+                    If requiring substantial financial aid, prioritize need-blind institutions (Harvard, Yale, Princeton,
+                    MIT, Amherst) to maximize admission chances alongside aid eligibility. At need-aware schools like
+                    UChicago, applying for financial aid may reduce admission probability for international applicants.
+                </p>
+            </div>
+
+            <h2>Journalistic Impact</h2>
+            <p>
+                Published in The Chicago Maroon, this investigation generated significant campus discussion about
+                financial aid accessibility and transparency. The piece was cited in student government discussions
+                about advocating for enhanced middle-income aid initiatives and improved international student support.
+            </p>
+            <p>
+                The analysis methodology — combining quantitative data analysis with qualitative student interviews —
+                demonstrated how data journalism can make complex policy issues accessible to student readers while
+                maintaining analytical rigor. The interactive visualizations allowed readers to explore scenarios
+                relevant to their own financial circumstances.
+            </p>
+
+            <h2>Tools &amp; Technologies</h2>
+            <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Pandas</span>
+                <span class="tech-tag">Altair</span>
+                <span class="tech-tag">Vega-Lite</span>
+                <span class="tech-tag">IPEDS Data</span>
+                <span class="tech-tag">Jupyter Notebooks</span>
+                <span class="tech-tag">Data Journalism</span>
+                <span class="tech-tag">CDS Analysis</span>
+            </div>
+        </div>
+    </main>
+
+    <section class="cta">
+        <h2>Explore More Projects</h2>
+        <p>Full analysis and interactive visualizations on GitHub.</p>
+        <div class="cta-buttons">
+            <a href="https://github.com/Tahvia127" target="_blank" rel="noopener noreferrer" class="btn primary">View on GitHub</a>
+            <a href="index.html" class="btn">Back to Portfolio</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 La'Tahvia Williams &middot; <a href="mailto:williamstahvia@gmail.com">williamstahvia@gmail.com</a></p>
+        <p style="margin-top:0.5rem;"><a href="index.html" style="font-size:0.78rem;text-transform:uppercase;letter-spacing:2px;">Back to Portfolio</a></p>
+    </footer>
+
+    <script>
+        const embedOpts = { actions: false, renderer: "svg" };
+
+        const spec1 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "title": null,
+            "data": {"values": [
+                {"Institution": "Harvard", "NetPrice": 17893, "IsUChicago": false},
+                {"Institution": "MIT", "NetPrice": 18478, "IsUChicago": false},
+                {"Institution": "UChicago", "NetPrice": 21500, "IsUChicago": true},
+                {"Institution": "Yale", "NetPrice": 23400, "IsUChicago": false},
+                {"Institution": "Stanford", "NetPrice": 25300, "IsUChicago": false},
+                {"Institution": "Penn", "NetPrice": 28600, "IsUChicago": false},
+                {"Institution": "Duke", "NetPrice": 29500, "IsUChicago": false},
+                {"Institution": "Johns Hopkins", "NetPrice": 31200, "IsUChicago": false}
+            ]},
+            "mark": {"type": "bar", "cornerRadiusEnd": 4},
+            "encoding": {
+                "y": {"field": "Institution", "type": "nominal", "sort": {"field": "NetPrice"}, "title": null, "axis": {"labelFontSize": 13}},
+                "x": {"field": "NetPrice", "type": "quantitative", "title": "Average Net Price ($)", "axis": {"format": "$,.0f", "grid": true, "gridColor": "#eee", "labelFontSize": 11}},
+                "color": {"condition": {"test": "datum.IsUChicago", "value": "#8B1A2A"}, "value": "#4472C4"},
+                "tooltip": [{"field": "Institution", "title": "School"}, {"field": "NetPrice", "title": "Net Price", "format": "$,.0f"}]
+            },
+            "width": "container", "height": 300
+        };
+
+        const spec2 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "title": null,
+            "data": {"values": [
+                {"Institution": "Harvard", "Threshold": 200000, "IsUChicago": false},
+                {"Institution": "Stanford", "Threshold": 150000, "IsUChicago": false},
+                {"Institution": "MIT", "Threshold": 200000, "IsUChicago": false},
+                {"Institution": "Yale", "Threshold": 100000, "IsUChicago": false},
+                {"Institution": "Princeton", "Threshold": 125000, "IsUChicago": false},
+                {"Institution": "UChicago", "Threshold": 125000, "IsUChicago": true},
+                {"Institution": "Penn", "Threshold": 100000, "IsUChicago": false},
+                {"Institution": "Duke", "Threshold": 90000, "IsUChicago": false},
+                {"Institution": "Johns Hopkins", "Threshold": 75000, "IsUChicago": false}
+            ]},
+            "mark": {"type": "bar", "cornerRadiusEnd": 4},
+            "encoding": {
+                "y": {"field": "Institution", "type": "nominal", "sort": {"field": "Threshold"}, "title": null, "axis": {"labelFontSize": 13}},
+                "x": {"field": "Threshold", "type": "quantitative", "title": "Free Tuition Threshold ($)", "axis": {"format": "$,.0f", "grid": true, "gridColor": "#eee", "labelFontSize": 11}},
+                "color": {"condition": {"test": "datum.IsUChicago", "value": "#8B1A2A"}, "value": "#FFC000"},
+                "tooltip": [{"field": "Institution", "title": "School"}, {"field": "Threshold", "title": "Threshold", "format": "$,.0f"}]
+            },
+            "width": "container", "height": 350
+        };
+
+        const spec3 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "title": null,
+            "data": {"values": [
+                {"Institution": "Princeton", "Income": "<$60k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
+                {"Institution": "Princeton", "Income": "$60-$100k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
+                {"Institution": "Princeton", "Income": "$100-$150k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
+                {"Institution": "Princeton", "Income": "$150k-$200k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
+                {"Institution": "Princeton", "Income": "$200k+", "Coverage": "Grants Only", "Color": "#70AD47"},
+                {"Institution": "MIT", "Income": "<$60k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
+                {"Institution": "MIT", "Income": "$60-$100k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
+                {"Institution": "MIT", "Income": "$100-$150k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
+                {"Institution": "MIT", "Income": "$150k-$200k", "Coverage": "Free Tuition", "Color": "#FFC000"},
+                {"Institution": "MIT", "Income": "$200k+", "Coverage": "Aid Available", "Color": "#D9D9D9"},
+                {"Institution": "Harvard", "Income": "<$60k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
+                {"Institution": "Harvard", "Income": "$60-$100k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
+                {"Institution": "Harvard", "Income": "$100-$150k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
+                {"Institution": "Harvard", "Income": "$150k-$200k", "Coverage": "Free Tuition", "Color": "#FFC000"},
+                {"Institution": "Harvard", "Income": "$200k+", "Coverage": "Aid Available", "Color": "#D9D9D9"},
+                {"Institution": "Duke", "Income": "<$60k", "Coverage": "Full Need Met", "Color": "#70AD47"},
+                {"Institution": "Duke", "Income": "$60-$100k", "Coverage": "Full Need Met", "Color": "#70AD47"},
+                {"Institution": "Duke", "Income": "$100-$150k", "Coverage": "Full Need Met", "Color": "#70AD47"},
+                {"Institution": "Duke", "Income": "$150k-$200k", "Coverage": "Full Need Met", "Color": "#70AD47"},
+                {"Institution": "Duke", "Income": "$200k+", "Coverage": "Aid w/ Loans", "Color": "#D9534F"},
+                {"Institution": "Penn", "Income": "<$60k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
+                {"Institution": "Penn", "Income": "$60-$100k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
+                {"Institution": "Penn", "Income": "$100-$150k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
+                {"Institution": "Penn", "Income": "$150k-$200k", "Coverage": "Free Tuition", "Color": "#FFC000"},
+                {"Institution": "Penn", "Income": "$200k+", "Coverage": "Aid w/ Loans", "Color": "#D9534F"},
+                {"Institution": "Stanford", "Income": "<$60k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
+                {"Institution": "Stanford", "Income": "$60-$100k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
+                {"Institution": "Stanford", "Income": "$100-$150k", "Coverage": "Free Tuition", "Color": "#FFC000"},
+                {"Institution": "Stanford", "Income": "$150k-$200k", "Coverage": "Free Tuition", "Color": "#FFC000"},
+                {"Institution": "Stanford", "Income": "$200k+", "Coverage": "Aid w/ Loans", "Color": "#D9534F"},
+                {"Institution": "UChicago", "Income": "<$60k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
+                {"Institution": "UChicago", "Income": "$60-$100k", "Coverage": "Free Tuition", "Color": "#FFC000"},
+                {"Institution": "UChicago", "Income": "$100-$150k", "Coverage": "Free Tuition", "Color": "#FFC000"},
+                {"Institution": "UChicago", "Income": "$150k-$200k", "Coverage": "Free Tuition", "Color": "#FFC000"},
+                {"Institution": "UChicago", "Income": "$200k+", "Coverage": "Aid w/ Loans", "Color": "#D9534F"},
+                {"Institution": "Johns Hopkins", "Income": "<$60k", "Coverage": "Full Need Met", "Color": "#70AD47"},
+                {"Institution": "Johns Hopkins", "Income": "$60-$100k", "Coverage": "Full Need Met", "Color": "#70AD47"},
+                {"Institution": "Johns Hopkins", "Income": "$100-$150k", "Coverage": "Aid w/ Loans", "Color": "#D9534F"},
+                {"Institution": "Johns Hopkins", "Income": "$150k-$200k", "Coverage": "Aid w/ Loans", "Color": "#D9534F"},
+                {"Institution": "Johns Hopkins", "Income": "$200k+", "Coverage": "Aid w/ Loans", "Color": "#D9534F"},
+                {"Institution": "Yale", "Income": "<$60k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
+                {"Institution": "Yale", "Income": "$60-$100k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
+                {"Institution": "Yale", "Income": "$100-$150k", "Coverage": "Aid w/ Loans", "Color": "#D9534F"},
+                {"Institution": "Yale", "Income": "$150k-$200k", "Coverage": "Aid w/ Loans", "Color": "#D9534F"},
+                {"Institution": "Yale", "Income": "$200k+", "Coverage": "Aid w/ Loans", "Color": "#D9534F"}
+            ]},
+            "mark": {"type": "rect", "stroke": "#fff", "strokeWidth": 1},
+            "encoding": {
+                "x": {"field": "Income", "type": "nominal", "title": "Family Income Range", "sort": ["<$60k", "$60-$100k", "$100-$150k", "$150k-$200k", "$200k+"], "axis": {"labelAngle": -45, "labelFontSize": 11}},
+                "y": {"field": "Institution", "type": "nominal", "title": null, "sort": ["Princeton", "MIT", "Harvard", "Penn", "Stanford", "UChicago", "Duke", "Johns Hopkins", "Yale"], "axis": {"labelFontSize": 13}},
+                "color": {"field": "Color", "type": "nominal", "scale": null},
+                "tooltip": [{"field": "Institution", "title": "Institution"}, {"field": "Income", "title": "Income"}, {"field": "Coverage", "title": "Aid Type"}]
+            },
+            "width": "container", "height": 380
+        };
+
+        vegaEmbed('#netPriceChart', spec1, embedOpts);
+        vegaEmbed('#thresholdChart', spec2, embedOpts);
+        vegaEmbed('#heatmapChart', spec3, embedOpts);
+    </script>
+</body>
+</html>

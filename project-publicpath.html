@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PublicPath | La'Tahvia Williams</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="project-styles.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <nav aria-label="Site navigation">
+        <a href="index.html" class="nav-logo">La'Tahvia Williams</a>
+        <div class="nav-links">
+            <a href="index.html">Portfolio</a>
+        </div>
+    </nav>
+
+    <header class="hero" id="main-content">
+        <div class="hero-inner">
+            <p class="category">Web App · Civic Tech</p>
+            <h1>PublicPath:<br><em>Public-Sector Job &amp; Partner Hub</em></h1>
+            <p class="subtitle">A jobs-and-partnerships platform with automated daily ingestion. Python sync scripts feed a Postgres backend; the frontend serves curated jobs, partner profiles, and resource pages for people looking to move into public-sector and mission-driven work.</p>
+            <div class="hero-meta">
+                <div class="hero-meta-item">
+                    <p class="hero-meta-label">Backend</p>
+                    <p class="hero-meta-value">Python · PostgreSQL</p>
+                </div>
+                <div class="hero-meta-item">
+                    <p class="hero-meta-label">Frontend</p>
+                    <p class="hero-meta-value">HTML · CSS · JS</p>
+                </div>
+                <div class="hero-meta-item">
+                    <p class="hero-meta-label">Automation</p>
+                    <p class="hero-meta-value">GitHub Actions</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content-body" class="body-section">
+        <div class="body-inner">
+            <p class="section-label">Overview</p>
+            <h2>Public-sector jobs are <em>everywhere</em>. Finding them shouldn't be a scavenger hunt.</h2>
+            <p>PublicPath consolidates public-sector and mission-driven job listings into one curated hub, with partner organizations surfaced alongside the roles they're hiring for. The pipeline is fully automated — daily syncs pull new listings, dedupe against the existing dataset, and generate a digest for subscribers. The frontend is intentionally simple so that the data, not the chrome, does the work.</p>
+
+            <h3>The data pipeline</h3>
+            <div class="pipeline">
+                <strong>sync_jobs.py</strong> → fetch + normalize listings → Postgres<br>
+                <strong>sync_jobs2.py</strong> → secondary sources + dedupe<br>
+                <strong>generate_digest.py</strong> → daily summary email<br>
+                <strong>GitHub Actions</strong> → cron-triggered runs, no server to babysit
+            </div>
+
+            <h3>What's on the site</h3>
+            <ul>
+                <li><strong>Jobs</strong> — filterable listings with role, organization, and location.</li>
+                <li><strong>Partners</strong> — profiles for the orgs whose roles get featured.</li>
+                <li><strong>Resources</strong> — guides and links for people transitioning into the public sector.</li>
+            </ul>
+
+            <h3>Tech stack</h3>
+            <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">SQL</span>
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">GitHub Actions</span>
+            </div>
+        </div>
+    </main>
+
+    <section class="cta">
+        <h2>See the codebase</h2>
+        <p>Full repo, sync scripts, and CI workflows on GitHub.</p>
+        <div class="cta-buttons">
+            <a href="https://github.com/Tahvia127/PublicPath" target="_blank" rel="noopener noreferrer" class="btn primary">View on GitHub</a>
+            <a href="index.html" class="btn">Back to Portfolio</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 La'Tahvia Williams &middot; <a href="mailto:williamstahvia@gmail.com">williamstahvia@gmail.com</a></p>
+        <p style="margin-top:0.5rem;"><a href="index.html" style="font-size:0.78rem;text-transform:uppercase;letter-spacing:2px;">Back to Portfolio</a></p>
+    </footer>
+</body>
+</html>

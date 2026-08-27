@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Payment Analysis | La'Tahvia Williams</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="project-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <nav aria-label="Site navigation">
+        <a href="index.html" class="nav-logo">La'Tahvia Williams</a>
+        <div class="nav-links">
+            <a href="index.html">Portfolio</a>
+        </div>
+    </nav>
+
+    <header class="hero" id="main-content">
+        <div class="hero-inner">
+            <p class="category">Data Analysis · Healthcare Policy</p>
+            <h1>Healthcare Payment Analysis:<br><em>Following the Money in Women's Health</em></h1>
+            <p class="subtitle">Analyzing pharmaceutical payments to OB/GYN specialists from 2017–2020, revealing how policy changes and COVID-19 transformed industry spending patterns.</p>
+            <div class="hero-meta">
+                <div class="hero-meta-item">
+                    <p class="hero-meta-label">Course</p>
+                    <p class="hero-meta-value">DATA 11800 Midterm Project</p>
+                </div>
+                <div class="hero-meta-item">
+                    <p class="hero-meta-label">Payments</p>
+                    <p class="hero-meta-value">$157.8M Analyzed</p>
+                </div>
+                <div class="hero-meta-item">
+                    <p class="hero-meta-label">Transactions</p>
+                    <p class="hero-meta-value">1.18M</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content-body" class="body-section">
+        <div class="body-inner">
+            <p class="section-label">Overview</p>
+            <h2>What does $157M in pharma payments <em>reveal</em> about women's health?</h2>
+            <p>
+                The Open Payments Database, maintained by the Centers for Medicare &amp; Medicaid Services (CMS), was created under the Physician Payments Sunshine Act of 2010 to promote transparency in financial relationships between healthcare providers and industry companies. This analysis examines $157,768,067 in payments to OB/GYN specialists across 1,175,177 transactions from 2017-2020.
+            </p>
+            <p>
+                During this period, significant healthcare policy changes and economic factors influenced payment distributions. The 2017 Tax Cuts and Jobs Act shifted financial priorities in the healthcare sector. In 2020, the COVID-19 pandemic caused a dramatic decline in medical procedures and pharmaceutical sponsorships, while the increasing adoption of value-based care models encouraged shifts in funding structures.
+            </p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">$157.8M</span>
+                    <span class="stat-label">Total Payments</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">1.18M</span>
+                    <span class="stat-label">Transactions</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">2017–2020</span>
+                    <span class="stat-label">Time Period</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">43%</span>
+                    <span class="stat-label">COVID-19 Decline</span>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>COVID-19 Impact: 43% Payment Decline</h3>
+                <p>
+                    Payments dropped from $46.45M in 2019 to $26.30M in 2020, a 43% decline. Transactions fell from 344,400 to 166,605. This dramatic reduction reflected the suspension of in-person physician meetings, cancellation of medical conferences, and the healthcare industry's shift to crisis response mode during the pandemic.
+                </p>
+            </div>
+
+            <h2>Key Findings</h2>
+
+            <div class="findings-list">
+                <div class="finding-item">
+                    <h4>Reproductive Endocrinology: 140% Surge in Average Payments</h4>
+                    <p>
+                        Counter to overall trends, Reproductive Endocrinology saw average payments increase from $305.63 per transaction in 2017 to $734.75 in 2020, a 140% increase. This surge reflects growing pharmaceutical investment in fertility treatments and assisted reproductive technologies, driven by new-generation fertility drugs and expansion of fertility preservation laws in multiple states.
+                    </p>
+                </div>
+
+                <div class="finding-item">
+                    <h4>Quarterly Financial Cycles Drive Seasonal Patterns</h4>
+                    <p>
+                        Between 2017-2019, monthly transactions consistently peaked in March and October, suggesting industry payments were linked to quarterly financial cycles. In 2020, this pattern disrupted with spikes in April and May due to emergency relief funds directed toward healthcare providers during the early pandemic months.
+                    </p>
+                </div>
+
+                <div class="finding-item">
+                    <h4>Geographic Disparities: California vs Wyoming</h4>
+                    <p>
+                        In 2019, California received $5,332,767.53 while Wyoming received only $3,269.42. These disparities reflect population differences, healthcare infrastructure concentration, and pharmaceutical company targeting strategies. California, Texas, and Florida led in transactions due to extensive medical institutions and active pharmaceutical collaborations.
+                    </p>
+                </div>
+
+                <div class="finding-item">
+                    <h4>Steady Growth Through 2019, Then Pandemic Collapse</h4>
+                    <p>
+                        Payments increased steadily from $41.92M in 2017 to $46.45M in 2019, reflecting growing investment in medical research and clinical partnerships. However, the 2019 Drug Pricing Transparency Initiative increased scrutiny over pharmaceutical payments, potentially influencing certain transaction declines before the pandemic's dramatic impact in 2020.
+                    </p>
+                </div>
+            </div>
+
+            <h2>Visualizations</h2>
+
+            <div class="chart-container">
+                <h3>Annual Payment Trends (2017-2020)</h3>
+                <p>Total payments showing steady growth through 2019 followed by the dramatic COVID-19 decline in 2020.</p>
+                <div class="chart-wrapper">
+                    <canvas id="yearlyChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <h3>Average Payment by OB/GYN Specialty (2017-2020)</h3>
+                <p>Reproductive Endocrinology and Gynecologic Oncology received the highest average payments per transaction.</p>
+                <div class="chart-wrapper">
+                    <canvas id="specialtyChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <h3>Monthly Transaction Patterns</h3>
+                <p>Quarterly cycles visible in 2017-2019 with March and October peaks, disrupted by pandemic in 2020.</p>
+                <div class="chart-wrapper">
+                    <canvas id="monthlyChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <h3>Top 10 States by Total Payments (2019)</h3>
+                <p>Geographic concentration of payments in states with major medical institutions and pharmaceutical collaborations.</p>
+                <div class="chart-wrapper">
+                    <canvas id="geoChart"></canvas>
+                </div>
+            </div>
+
+            <h2>Policy Context Timeline</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2010: Physician Payments Sunshine Act</div>
+                    <p>Created the Open Payments Database under the Affordable Care Act to promote transparency in financial relationships between healthcare providers and industry companies. This foundational legislation enabled the analysis of pharmaceutical payment patterns.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2017: Tax Cuts and Jobs Act</div>
+                    <p>Repealed the individual mandate of the Affordable Care Act, resulting in decreased insured patients and shifting financial priorities in the healthcare sector. Corporate tax reductions provided pharmaceutical companies with additional capital, potentially contributing to payment increases observed in 2017-2018.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2019: Drug Pricing Transparency Initiative</div>
+                    <p>Increased scrutiny of pharmaceutical pricing and physician relationships influenced company spending strategies. While payment levels remained elevated through 2019, this policy shift may have contributed to changes in certain transaction types before the pandemic.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2020: COVID-19 Pandemic</div>
+                    <p>The pandemic fundamentally disrupted pharmaceutical-physician engagement. April and May 2020 experienced a 70% drop in transactions compared to previous years, corresponding with hospital shutdowns, canceled elective procedures, and reduced pharmaceutical industry marketing activities. Total payments fell 43% as companies shifted focus toward emergency medical responses.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">Value-Based Care Transition</div>
+                    <p>The increasing adoption of value-based care models encouraged shifts in funding structures, as healthcare providers were incentivized to focus on patient outcomes rather than volume-based services. States with established telehealth frameworks maintained more stable industry transactions compared to those with limited digital health infrastructure.</p>
+                </div>
+            </div>
+
+            <h2>Technologies Used</h2>
+            <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">pandas</span>
+                <span class="tech-tag">NumPy</span>
+                <span class="tech-tag">matplotlib</span>
+                <span class="tech-tag">Plotly</span>
+                <span class="tech-tag">geopandas</span>
+                <span class="tech-tag">CMS Open Payments</span>
+            </div>
+        </div>
+    </main>
+
+    <section class="cta">
+        <h2>Interested in the Details?</h2>
+        <p>Full notebook and analysis on GitHub.</p>
+        <div class="cta-buttons">
+            <a href="https://github.com/Tahvia127" target="_blank" rel="noopener noreferrer" class="btn primary">View on GitHub</a>
+            <a href="index.html" class="btn">Back to Portfolio</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 La'Tahvia Williams &middot; <a href="mailto:williamstahvia@gmail.com">williamstahvia@gmail.com</a></p>
+        <p style="margin-top:0.5rem;"><a href="index.html" style="font-size:0.78rem;text-transform:uppercase;letter-spacing:2px;">Back to Portfolio</a></p>
+    </footer>
+
+    <script>
+        const ctx1 = document.getElementById('yearlyChart').getContext('2d');
+        new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: ['2017', '2018', '2019', '2020'],
+                datasets: [{
+                    label: 'Total Payments (Millions)',
+                    data: [41.92, 42.70, 46.45, 26.30],
+                    borderColor: '#8B1A2A',
+                    backgroundColor: 'rgba(139, 26, 42, 0.1)',
+                    borderWidth: 3,
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { beginAtZero: true, title: { display: true, text: 'Payments ($ Millions)' } }
+                }
+            }
+        });
+
+        const ctx2 = document.getElementById('specialtyChart').getContext('2d');
+        new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['Reproductive Endocrinology', 'Gynecologic Oncology', 'Maternal-Fetal Medicine', 'Female Pelvic Medicine', 'General OB/GYN'],
+                datasets: [{
+                    label: 'Average Payment per Transaction ($)',
+                    data: [520, 308, 247, 214, 162],
+                    backgroundColor: '#8B1A2A',
+                    borderColor: '#5C0F1B',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { beginAtZero: true, title: { display: true, text: 'Average Payment ($)' } }
+                }
+            }
+        });
+
+        const ctx3 = document.getElementById('monthlyChart').getContext('2d');
+        new Chart(ctx3, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [
+                    {
+                        label: '2017-2019 Average',
+                        data: [22000, 24000, 32000, 26000, 27000, 25000, 24000, 26000, 25000, 31000, 26000, 28000],
+                        borderColor: '#8B1A2A',
+                        backgroundColor: 'transparent',
+                        borderWidth: 2,
+                        tension: 0.4
+                    },
+                    {
+                        label: '2020',
+                        data: [19000, 18000, 21000, 8500, 9000, 12000, 13000, 15000, 14000, 13500, 13000, 12500],
+                        borderColor: '#C41E3A',
+                        backgroundColor: 'transparent',
+                        borderWidth: 2,
+                        tension: 0.4,
+                        borderDash: [5, 5]
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: { beginAtZero: true, title: { display: true, text: 'Number of Transactions' } }
+                }
+            }
+        });
+
+        const ctx4 = document.getElementById('geoChart').getContext('2d');
+        new Chart(ctx4, {
+            type: 'bar',
+            data: {
+                labels: ['California', 'Texas', 'Florida', 'New York', 'Pennsylvania', 'Illinois', 'Ohio', 'North Carolina', 'Georgia', 'Michigan'],
+                datasets: [{
+                    label: 'Total Payments ($ Millions)',
+                    data: [5.33, 3.72, 2.52, 2.31, 2.18, 1.95, 1.87, 1.76, 1.64, 1.52],
+                    backgroundColor: '#8B1A2A',
+                    borderColor: '#5C0F1B',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { beginAtZero: true, title: { display: true, text: 'Total Payments ($ Millions)' } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

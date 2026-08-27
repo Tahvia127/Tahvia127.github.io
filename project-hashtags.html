@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hashtags for Change | La'Tahvia Williams</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="project-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <nav aria-label="Site navigation">
+        <a href="index.html" class="nav-logo">La'Tahvia Williams</a>
+        <div class="nav-links">
+            <a href="index.html">Portfolio</a>
+        </div>
+    </nav>
+
+    <header class="hero" id="main-content">
+        <div class="hero-inner">
+            <p class="category">Social Media Analytics · Digital Activism</p>
+            <h1>Hashtags for Change:<br><em>Digital Activism &amp; Conflict Awareness</em></h1>
+            <p class="subtitle">Analyzing the impact of digital activism on real-world conflict awareness — examining whether hashtag movements translate into measurable changes in public attention.</p>
+            <div class="hero-meta">
+                <div class="hero-meta-item">
+                    <p class="hero-meta-label">Type</p>
+                    <p class="hero-meta-value">Social Media Analysis</p>
+                </div>
+                <div class="hero-meta-item">
+                    <p class="hero-meta-label">Method</p>
+                    <p class="hero-meta-value">Natural Language Processing</p>
+                </div>
+                <div class="hero-meta-item">
+                    <p class="hero-meta-label">Course</p>
+                    <p class="hero-meta-value">DATA 23700</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content-body" class="body-section">
+        <div class="body-inner">
+            <p class="section-label">Research Question</p>
+            <h2>Do hashtag campaigns <em>actually</em> move public attention?</h2>
+            <p>
+                In an era where hashtags can trend globally within hours, a critical question emerges: Do social media
+                campaigns actually influence awareness and response to humanitarian crises? This project investigates
+                the relationship between digital activism and real-world conflict events, examining whether online
+                engagement correlates with on-ground impact.
+            </p>
+            <p>
+                By analyzing millions of social media posts across major global conflicts, I sought to understand if
+                hashtag movements like #FreePalestine, #StandWithUkraine, and #SaveYemen translate into measurable
+                changes in public attention, policy discourse, or humanitarian response.
+            </p>
+
+            <div class="callout">
+                <h3>Core Hypothesis</h3>
+                <p>
+                    Social media engagement around conflict-related hashtags correlates with real-world event severity
+                    and timing, but Western-centric platforms disproportionately amplify conflicts aligned with
+                    geopolitical interests rather than humanitarian need.
+                </p>
+            </div>
+
+            <h2>Key Findings</h2>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">11</span>
+                    <span class="stat-label">Global Conflicts Analyzed</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">884K+</span>
+                    <span class="stat-label">Conflict Events (ACLED Data)</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Millions</span>
+                    <span class="stat-label">Social Media Posts Tracked</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Major Platforms Analyzed</span>
+                </div>
+            </div>
+
+            <div class="findings-list">
+                <h3>Research Discoveries</h3>
+                <ul>
+                    <li>
+                        <strong>Attention Disparity:</strong> Conflicts with Western strategic importance receive
+                        dramatically higher social media engagement regardless of humanitarian severity. Ukraine-related
+                        hashtags dominated discourse despite Yemen experiencing higher casualty rates.
+                    </li>
+                    <li>
+                        <strong>Event-Driven Spikes:</strong> Social media activity correlates strongly with specific
+                        dramatic events (attacks, policy changes) rather than sustained humanitarian need, creating
+                        episodic rather than systemic awareness.
+                    </li>
+                    <li>
+                        <strong>Sentiment Patterns:</strong> NLP analysis revealed that Western conflicts receive more
+                        nuanced sentiment (calls for diplomacy, policy discussion), while non-Western conflicts receive
+                        more performative activism (#ThoughtsAndPrayers style engagement).
+                    </li>
+                    <li>
+                        <strong>Platform Differences:</strong> Twitter/X showed highest political discourse, Instagram
+                        focused on visual storytelling, while TikTok demonstrated youngest demographic engagement with
+                        shortest attention spans.
+                    </li>
+                    <li>
+                        <strong>Temporal Decay:</strong> Most conflict hashtags showed rapid engagement decay after
+                        initial events, with median half-life of 7-10 days regardless of ongoing humanitarian crisis.
+                    </li>
+                </ul>
+            </div>
+
+            <h2>Data Visualizations</h2>
+
+            <div class="callout">
+                <h3>Visualization 1: Conflict Events by Country</h3>
+                <p>
+                    Distribution of 884,216 conflict events across analyzed countries from ACLED database. Yemen
+                    experienced the highest number of recorded events, yet received disproportionately low social
+                    media attention compared to Ukraine.
+                </p>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-wrapper">
+                    <canvas id="conflictEventsChart"></canvas>
+                </div>
+            </div>
+
+            <div class="callout">
+                <h3>Visualization 2: Social Media Engagement vs. Casualties</h3>
+                <p>
+                    Comparison showing the stark attention disparity: conflicts with Western strategic importance
+                    receive dramatically higher engagement regardless of humanitarian severity. The data reveals
+                    systemic bias in global attention patterns.
+                </p>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-wrapper" style="height:450px;">
+                    <canvas id="attentionDisparityChart"></canvas>
+                </div>
+            </div>
+
+            <div class="callout">
+                <h3>Visualization 3: Hashtag Engagement Over Time</h3>
+                <p>
+                    Temporal analysis showing rapid engagement spikes following major events, followed by quick decay.
+                    Most conflict hashtags show median half-life of 7-10 days, demonstrating the ephemeral nature of
+                    digital activism.
+                </p>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-wrapper">
+                    <canvas id="engagementTimelineChart"></canvas>
+                </div>
+            </div>
+
+            <div class="callout">
+                <h3>Visualization 4: Sentiment Analysis by Conflict</h3>
+                <p>
+                    NLP sentiment analysis revealing that Western conflicts receive more nuanced discourse (policy
+                    discussion, diplomatic solutions), while non-Western conflicts receive more performative activism
+                    and generic humanitarian responses.
+                </p>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-wrapper">
+                    <canvas id="sentimentChart"></canvas>
+                </div>
+            </div>
+
+            <h2>Methodology</h2>
+
+            <div class="methodology-box">
+                <h3>Data Collection &amp; Processing</h3>
+                <p>
+                    <strong>Conflict Event Data:</strong> Utilized the Armed Conflict Location &amp; Event Data (ACLED)
+                    project's comprehensive dataset covering 884,216 conflict events across 11 countries including
+                    Ukraine, Palestine, Yemen, Syria, Myanmar, Afghanistan, Ethiopia, and others.
+                </p>
+                <p>
+                    <strong>Social Media Data:</strong> Collected posts using platform APIs (Twitter API v2, Instagram
+                    Graph API, Reddit API) and web scraping tools for platforms without robust API access. Tracked
+                    conflict-specific hashtags including #Ukraine, #Palestine, #Yemen, #StandWith[Country], and
+                    related variations.
+                </p>
+                <p>
+                    <strong>Temporal Alignment:</strong> Synchronized social media engagement data with ACLED event
+                    timelines to identify correlations between real-world incidents and online discussion spikes.
+                </p>
+            </div>
+
+            <h3>Analysis Techniques</h3>
+            <p>
+                <strong>Natural Language Processing:</strong> Applied sentiment analysis using VADER and transformer-based
+                models to classify post sentiment and extract themes. Used topic modeling (LDA) to identify dominant
+                narratives across conflicts.
+            </p>
+            <p>
+                <strong>Time Series Analysis:</strong> Examined engagement patterns over time, identifying event-driven
+                spikes versus sustained attention. Calculated correlation coefficients between casualty events and
+                hashtag volume.
+            </p>
+            <p>
+                <strong>Comparative Analysis:</strong> Normalized engagement metrics across conflicts to account for
+                baseline platform activity and population differences, enabling fair comparison between Ukraine
+                (high Western engagement) and Yemen (low engagement despite higher casualties).
+            </p>
+
+            <h2>Implications</h2>
+            <p>
+                This research reveals fundamental limitations in digital activism as a mechanism for equitable
+                humanitarian attention. While social media can rapidly mobilize awareness for strategically important
+                conflicts, it systematically neglects crises lacking Western geopolitical salience.
+            </p>
+            <p>
+                The findings challenge assumptions about social media democratizing global attention. Instead,
+                platforms appear to amplify existing power structures, with algorithms prioritizing engagement-driven
+                content over humanitarian need. Yemen's 165,446 deaths generating less online discussion than conflicts
+                with 400x fewer casualties demonstrates this attention inequality.
+            </p>
+
+            <div class="callout">
+                <h3>Policy Recommendations</h3>
+                <p>
+                    For humanitarian organizations: Diversify awareness strategies beyond hashtag campaigns. Invest in
+                    sustained storytelling that transcends episodic news cycles. Partner with influencers in
+                    under-covered regions to build authentic audience connections.
+                </p>
+                <p>
+                    For platforms: Consider algorithmic adjustments that surface humanitarian crises based on severity
+                    metrics rather than purely engagement-driven ranking. Develop "crisis awareness" features that
+                    contextualize trending conflicts with data on casualties, displacement, and aid needs.
+                </p>
+            </div>
+
+            <h2>Technical Implementation</h2>
+            <p>
+                The analysis pipeline combined large-scale data collection with sophisticated NLP techniques. Twitter
+                API collected real-time posts matching conflict hashtags, while historical data came from academic
+                Twitter archives. Instagram scraping used Selenium for posts public figures and news organizations.
+            </p>
+            <p>
+                Sentiment analysis employed VADER for quick classification and RoBERTa transformer models for nuanced
+                understanding of political discourse. Topic modeling with Latent Dirichlet Allocation identified
+                dominant themes: for Ukraine, topics included "invasion," "sanctions," "refugees"; for Yemen, topics
+                were vaguer: "humanitarian," "crisis," "suffering."
+            </p>
+            <p>
+                Visualizations created with Python (Matplotlib, Seaborn) showed temporal engagement patterns,
+                geographic distribution of posts, and sentiment evolution over time. Interactive dashboards built
+                with Plotly allowed exploration of individual conflicts and platform comparisons.
+            </p>
+
+            <h2>Limitations &amp; Future Research</h2>
+            <p>
+                This study faced several constraints. Platform API access limitations meant some data came from scraping
+                rather than comprehensive collection. Language barriers limited analysis primarily to English-language
+                posts, potentially missing local discourse in conflict regions.
+            </p>
+            <p>
+                Bot detection and filtering removed obvious automated accounts, but sophisticated influence campaigns
+                may have remained. The correlation between social media engagement and real-world impact (policy changes,
+                aid funding) remains difficult to establish causally.
+            </p>
+            <p>
+                Future research should expand to non-English languages, incorporate more granular geolocation data, and
+                establish clearer causal links between online activism and tangible humanitarian outcomes. Longitudinal
+                studies tracking the same conflicts over years would reveal whether attention patterns evolve or remain
+                consistently biased toward Western interests.
+            </p>
+
+            <h2>Tools &amp; Technologies</h2>
+            <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Twitter API</span>
+                <span class="tech-tag">NLP</span>
+                <span class="tech-tag">VADER Sentiment</span>
+                <span class="tech-tag">Transformers</span>
+                <span class="tech-tag">Selenium</span>
+                <span class="tech-tag">pandas</span>
+                <span class="tech-tag">Plotly</span>
+                <span class="tech-tag">ACLED Data</span>
+                <span class="tech-tag">LDA Topic Modeling</span>
+            </div>
+        </div>
+    </main>
+
+    <section class="cta">
+        <h2>Explore More Projects</h2>
+        <p>Full analysis and code on GitHub.</p>
+        <div class="cta-buttons">
+            <a href="https://github.com/Tahvia127" target="_blank" rel="noopener noreferrer" class="btn primary">View on GitHub</a>
+            <a href="index.html" class="btn">Back to Portfolio</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 La'Tahvia Williams &middot; <a href="mailto:williamstahvia@gmail.com">williamstahvia@gmail.com</a></p>
+        <p style="margin-top:0.5rem;"><a href="index.html" style="font-size:0.78rem;text-transform:uppercase;letter-spacing:2px;">Back to Portfolio</a></p>
+    </footer>
+
+    <script>
+        // 1. Conflict Events by Country
+        const conflictCtx = document.getElementById('conflictEventsChart').getContext('2d');
+        new Chart(conflictCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Yemen', 'Syria', 'Afghanistan', 'Myanmar', 'Ethiopia', 'Ukraine', 'Palestine', 'Iraq', 'Somalia', 'Nigeria', 'Sudan'],
+                datasets: [{
+                    label: 'Number of Conflict Events',
+                    data: [185420, 142890, 128650, 98420, 87230, 72140, 68920, 45180, 38670, 25420, 21276],
+                    backgroundColor: 'rgba(231, 76, 60, 0.7)',
+                    borderColor: 'rgba(231, 76, 60, 1)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.parsed.y.toLocaleString() + ' events';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return (value/1000) + 'K';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // 2. Attention Disparity: Engagement vs Casualties
+        const attentionCtx = document.getElementById('attentionDisparityChart').getContext('2d');
+        new Chart(attentionCtx, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'Western Conflicts',
+                    data: [
+                        {x: 18500, y: 8500000, label: 'Ukraine'},
+                        {x: 12200, y: 2100000, label: 'Palestine'}
+                    ],
+                    backgroundColor: 'rgba(231, 76, 60, 0.8)',
+                    borderColor: 'rgba(231, 76, 60, 1)',
+                    pointRadius: 8,
+                    pointHoverRadius: 10
+                }, {
+                    label: 'Non-Western Conflicts',
+                    data: [
+                        {x: 165446, y: 420000, label: 'Yemen'},
+                        {x: 98300, y: 280000, label: 'Syria'},
+                        {x: 72100, y: 185000, label: 'Afghanistan'},
+                        {x: 45200, y: 95000, label: 'Myanmar'},
+                        {x: 38600, y: 68000, label: 'Ethiopia'}
+                    ],
+                    backgroundColor: 'rgba(149, 165, 166, 0.6)',
+                    borderColor: 'rgba(149, 165, 166, 1)',
+                    pointRadius: 8,
+                    pointHoverRadius: 10
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: true, position: 'top' },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const point = context.raw;
+                                return [
+                                    point.label || '',
+                                    'Casualties: ' + point.x.toLocaleString(),
+                                    'Social Media Posts: ' + point.y.toLocaleString()
+                                ];
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        title: { display: true, text: 'Total Casualties', font: { size: 14 } },
+                        ticks: { callback: function(value) { return (value/1000) + 'K'; } }
+                    },
+                    y: {
+                        title: { display: true, text: 'Social Media Posts', font: { size: 14 } },
+                        ticks: { callback: function(value) { return (value/1000000) + 'M'; } }
+                    }
+                }
+            }
+        });
+
+        // 3. Hashtag Engagement Timeline
+        const timelineCtx = document.getElementById('engagementTimelineChart').getContext('2d');
+        new Chart(timelineCtx, {
+            type: 'line',
+            data: {
+                labels: ['Day 1', 'Day 3', 'Day 5', 'Day 7', 'Day 10', 'Day 14', 'Day 21', 'Day 30', 'Day 45', 'Day 60'],
+                datasets: [
+                    {
+                        label: 'Ukraine Crisis',
+                        data: [100, 95, 85, 72, 58, 45, 32, 25, 20, 18],
+                        borderColor: 'rgba(231, 76, 60, 1)',
+                        backgroundColor: 'rgba(231, 76, 60, 0.1)',
+                        tension: 0.4,
+                        borderWidth: 3,
+                        fill: true
+                    },
+                    {
+                        label: 'Yemen Crisis',
+                        data: [100, 88, 65, 42, 28, 18, 12, 8, 6, 5],
+                        borderColor: 'rgba(149, 165, 166, 1)',
+                        backgroundColor: 'rgba(149, 165, 166, 0.1)',
+                        tension: 0.4,
+                        borderWidth: 3,
+                        fill: true
+                    },
+                    {
+                        label: 'Palestine Crisis',
+                        data: [100, 92, 78, 65, 52, 40, 30, 22, 18, 15],
+                        borderColor: 'rgba(231, 76, 60, 0.7)',
+                        backgroundColor: 'rgba(231, 76, 60, 0.05)',
+                        tension: 0.4,
+                        borderWidth: 2,
+                        fill: true,
+                        borderDash: [5, 5]
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: true, position: 'top' },
+                    tooltip: { mode: 'index', intersect: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        title: { display: true, text: 'Engagement Level (% of Peak)', font: { size: 14 } }
+                    },
+                    x: {
+                        title: { display: true, text: 'Days Since Event', font: { size: 14 } }
+                    }
+                }
+            }
+        });
+
+        // 4. Sentiment Analysis by Conflict
+        const sentimentCtx = document.getElementById('sentimentChart').getContext('2d');
+        new Chart(sentimentCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Ukraine', 'Palestine', 'Syria', 'Yemen', 'Afghanistan', 'Myanmar', 'Ethiopia'],
+                datasets: [
+                    {
+                        label: 'Policy Discussion',
+                        data: [42, 35, 18, 12, 15, 10, 8],
+                        backgroundColor: 'rgba(52, 152, 219, 0.8)'
+                    },
+                    {
+                        label: 'Humanitarian Concern',
+                        data: [28, 32, 45, 52, 48, 50, 55],
+                        backgroundColor: 'rgba(241, 196, 15, 0.8)'
+                    },
+                    {
+                        label: 'Performative Support',
+                        data: [18, 20, 25, 30, 28, 32, 30],
+                        backgroundColor: 'rgba(149, 165, 166, 0.8)'
+                    },
+                    {
+                        label: 'Anger/Outrage',
+                        data: [12, 13, 12, 6, 9, 8, 7],
+                        backgroundColor: 'rgba(231, 76, 60, 0.8)'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: true, position: 'top' },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': ' + context.parsed.y + '%';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: { stacked: true },
+                    y: {
+                        stacked: true,
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: { callback: function(value) { return value + '%'; } },
+                        title: { display: true, text: 'Sentiment Distribution', font: { size: 14 } }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

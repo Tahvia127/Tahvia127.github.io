@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgotten Wars | La'Tahvia Williams</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="project-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <nav aria-label="Site navigation">
+        <a href="index.html" class="nav-logo">La'Tahvia Williams</a>
+        <div class="nav-links">
+            <a href="index.html">Portfolio</a>
+        </div>
+    </nav>
+
+    <header class="hero" id="main-content">
+        <div class="hero-inner">
+            <p class="category">Data Science for Human Rights · Quantitative Research</p>
+            <h1>Forgotten Wars:<br><em>The Attention Hierarchy of Global Conflict</em></h1>
+            <p class="subtitle">Quantifying how Western political salience, not human suffering, determines which wars the world cares about.</p>
+            <div class="hero-meta">
+                <div class="hero-meta-item">
+                    <p class="hero-meta-label">Course</p>
+                    <p class="hero-meta-value">DATA 23700 Final Project</p>
+                </div>
+                <div class="hero-meta-item">
+                    <p class="hero-meta-label">Events</p>
+                    <p class="hero-meta-value">884,216</p>
+                </div>
+                <div class="hero-meta-item">
+                    <p class="hero-meta-label">Countries</p>
+                    <p class="hero-meta-value">11 Analyzed</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content-body" class="body-section">
+        <div class="body-inner">
+            <p class="section-label">Research Question</p>
+            <h2>Does attention follow <em>human suffering</em> or political salience?</h2>
+            <p>
+                How strongly do documented conflict events correlate with Google search volume for conflict-related terms, and how does this relationship vary across crises? This investigation tests whether public attention follows humanitarian severity or operates according to other factors like Western political salience, geographic proximity, or media framing.
+            </p>
+            <p>
+                Using ACLED's comprehensive conflict database and Google Trends search data, this analysis examined 884,216 conflict events across 11 countries from 2020-2025, revealing systematic patterns in how global attention is allocated to human suffering.
+            </p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">884,216</span>
+                    <span class="stat-label">Conflict Events</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">11</span>
+                    <span class="stat-label">Countries Analyzed</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">2020–2025</span>
+                    <span class="stat-label">Time Period</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">25x</span>
+                    <span class="stat-label">Attention Gap</span>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Core Finding</h3>
+                <p>
+                    ATTENTION = f(Western Political Salience) NOT f(Human Suffering). Analysis reveals that correlation between documented violence and public search interest ranges from r = 0.77 (Palestine) to r = 0.03 (Yemen), a 25-fold difference that has nothing to do with death toll. Yemen's 165,446 deaths generate r = 0.03 correlation while USA's 496 deaths generate r = 0.75 correlation — a 416:1 death ratio with inverse attention patterns.
+                </p>
+            </div>
+
+            <h2>Key Findings</h2>
+
+            <div class="findings-list">
+                <div class="finding-item">
+                    <h4>Western Salience Determines Visibility</h4>
+                    <p>
+                        Conflicts with clear Western strategic interests maintain strong correlations between violence and attention. Palestine (r=0.77), USA (r=0.75), and Ukraine achieve moderate-to-strong correlations. Meanwhile, conflicts without direct Western involvement — Syria (r=0.16), Yemen (r=0.03), Ethiopia — fade into statistical invisibility regardless of humanitarian severity.
+                    </p>
+                </div>
+
+                <div class="finding-item">
+                    <h4>Syria: The Forgotten War</h4>
+                    <p>
+                        Despite 145,292 events and 141,446 deaths from 2020-2025, Syria generates almost no public attention (r=0.16). After dominating headlines during 2016-2018, Syria became normalized as a permanent crisis. The world learned to look away, demonstrating how sustained violence creates attention fatigue rather than sustained concern.
+                    </p>
+                </div>
+
+                <div class="finding-item">
+                    <h4>The Death Toll Paradox</h4>
+                    <p>
+                        More deaths do not predict more attention. Yemen experienced 165,446 fatalities with correlation of r=0.03. Ukraine saw 217,249 deaths with moderate correlation. The USA's 496 deaths achieved r=0.75. This inverse relationship proves attention follows political salience, not humanitarian need.
+                    </p>
+                </div>
+
+                <div class="finding-item">
+                    <h4>Attention Decay Patterns</h4>
+                    <p>
+                        Even geopolitically significant conflicts experience exponential attention decay. For Ukraine, search interest dropped dramatically after the initial invasion despite hundreds of weekly deaths continuing. The half-life of conflict attention appears to be approximately 3 months, after which events must be dramatically escalatory to recapture public focus.
+                    </p>
+                </div>
+
+                <div class="finding-item">
+                    <h4>Implications for Humanitarian Funding</h4>
+                    <p>
+                        This research demonstrates that attention allocation follows predictable patterns based on Western political priorities rather than humanitarian need, creating "forgotten wars" that remain systematically underfunded despite ongoing violence. Syria, Yemen, and Ethiopia receive minimal international aid relative to casualty counts.
+                    </p>
+                </div>
+            </div>
+
+            <h2>Visualizations</h2>
+
+            <div class="chart-container">
+                <h3>Attention vs Events: Country Correlation</h3>
+                <p>Correlation coefficients between conflict events and search interest across 11 analyzed countries, revealing the dramatic attention hierarchy.</p>
+                <div class="chart-wrapper">
+                    <canvas id="correlationChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <h3>Major Conflicts by Scale (2020-2025)</h3>
+                <p>Total events and fatalities for largest conflicts, showing disconnect between violence severity and public attention.</p>
+                <div class="chart-wrapper">
+                    <canvas id="eventsChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <h3>The Death Toll Paradox</h3>
+                <p>Scatter plot demonstrating the inverse relationship between total deaths and attention correlation.</p>
+                <div class="chart-wrapper">
+                    <canvas id="deathsChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <h3>Top 6 Countries by Fatalities</h3>
+                <p>Countries with highest death tolls from 2020-2025, many receiving minimal international attention.</p>
+                <div class="chart-wrapper">
+                    <canvas id="fatalitiesChart"></canvas>
+                </div>
+            </div>
+
+            <h2>Methodology</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">ACLED Data Collection</div>
+                    <p>Processed weekly aggregated data from ACLED's comprehensive database of political violence and protests worldwide, covering 884,216 events with precise geolocated details, dates, violence types, and fatality numbers across 6 global regions (Africa, Asia-Pacific, Europe-Central-Asia, Latin America-Caribbean, Middle East, US-Canada).</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">Google Trends Integration</div>
+                    <p>Collected normalized search interest (0-100 scale) for 44 calibrated conflict-related terms for each country. Terms were carefully selected to capture different aspects of public attention while avoiding bias toward specific narratives or perspectives.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">Time-Lagged Correlation Analysis</div>
+                    <p>Implemented Pearson correlation coefficients to quantify relationships between conflict events and search volume. Time-lagged analysis revealed predominantly reactive attention patterns, with searches following rather than anticipating violence escalations.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">Cross-Country Comparison</div>
+                    <p>Analyzed 11 countries representing diverse conflict types, geographic regions, and levels of Western political salience. Countries included Ukraine, Syria, Yemen, Palestine, India, USA, Myanmar, Ethiopia, and others, enabling identification of systematic attention allocation patterns.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">Pattern Classification</div>
+                    <p>Conflicts were categorized into attention tiers based on correlation strength: High Western Salience (r &gt; 0.6), Moderate Salience (r = 0.3-0.6), Low Salience (r = 0.1-0.3), and Forgotten Wars (r &lt; 0.1). This classification revealed clear dividing lines based on geopolitical factors.</p>
+                </div>
+            </div>
+
+            <h2>Technologies Used</h2>
+            <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">pandas</span>
+                <span class="tech-tag">NumPy</span>
+                <span class="tech-tag">Altair</span>
+                <span class="tech-tag">SciPy</span>
+                <span class="tech-tag">ACLED API</span>
+                <span class="tech-tag">Google Trends</span>
+                <span class="tech-tag">Statistical Analysis</span>
+            </div>
+        </div>
+    </main>
+
+    <section class="cta">
+        <h2>Interested in the Details?</h2>
+        <p>Full notebook and analysis on GitHub.</p>
+        <div class="cta-buttons">
+            <a href="https://github.com/Tahvia127" target="_blank" rel="noopener noreferrer" class="btn primary">View on GitHub</a>
+            <a href="index.html" class="btn">Back to Portfolio</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 La'Tahvia Williams &middot; <a href="mailto:williamstahvia@gmail.com">williamstahvia@gmail.com</a></p>
+        <p style="margin-top:0.5rem;"><a href="index.html" style="font-size:0.78rem;text-transform:uppercase;letter-spacing:2px;">Back to Portfolio</a></p>
+    </footer>
+
+    <script>
+        const ctx1 = document.getElementById('correlationChart').getContext('2d');
+        new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: ['Palestine', 'USA', 'Ukraine', 'India', 'Myanmar', 'Syria', 'Yemen', 'Ethiopia'],
+                datasets: [{
+                    label: 'Correlation Coefficient (r)',
+                    data: [0.77, 0.75, 0.40, 0.28, 0.24, 0.16, 0.03, 0.02],
+                    backgroundColor: '#8B1A2A',
+                    borderColor: '#5C0F1B',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { beginAtZero: true, max: 0.8, title: { display: true, text: 'Pearson Correlation (r)' } }
+                }
+            }
+        });
+
+        const ctx2 = document.getElementById('eventsChart').getContext('2d');
+        new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['Ukraine', 'Syria', 'Yemen', 'Myanmar', 'Palestine', 'India'],
+                datasets: [
+                    {
+                        label: 'Events (Thousands)',
+                        data: [269.4, 145.3, 107.8, 96.5, 82.4, 195.2],
+                        backgroundColor: '#8B1A2A'
+                    },
+                    {
+                        label: 'Fatalities (Thousands)',
+                        data: [217.2, 141.4, 165.4, 98.6, 71.3, 13.4],
+                        backgroundColor: '#C41E3A'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: { beginAtZero: true, title: { display: true, text: 'Count (Thousands)' } }
+                }
+            }
+        });
+
+        const ctx3 = document.getElementById('deathsChart').getContext('2d');
+        new Chart(ctx3, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'Countries',
+                    data: [
+                        {x: 217249, y: 0.40, label: 'Ukraine'},
+                        {x: 165446, y: 0.03, label: 'Yemen'},
+                        {x: 141446, y: 0.16, label: 'Syria'},
+                        {x: 98567, y: 0.24, label: 'Myanmar'},
+                        {x: 71263, y: 0.77, label: 'Palestine'},
+                        {x: 496, y: 0.75, label: 'USA'},
+                        {x: 13359, y: 0.28, label: 'India'}
+                    ],
+                    backgroundColor: '#8B1A2A',
+                    borderColor: '#5C0F1B',
+                    borderWidth: 1,
+                    pointRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.raw.label + ': ' + context.raw.x.toLocaleString() + ' deaths, r=' + context.raw.y;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: { type: 'logarithmic', title: { display: true, text: 'Total Deaths 2020-2025 (log scale)' } },
+                    y: { beginAtZero: true, max: 0.8, title: { display: true, text: 'Correlation Coefficient (r)' } }
+                }
+            }
+        });
+
+        const ctx4 = document.getElementById('fatalitiesChart').getContext('2d');
+        new Chart(ctx4, {
+            type: 'bar',
+            data: {
+                labels: ['Ukraine', 'Yemen', 'Syria', 'Myanmar', 'Palestine', 'Iraq'],
+                datasets: [{
+                    label: 'Total Fatalities',
+                    data: [217249, 165446, 141446, 98567, 71263, 107355],
+                    backgroundColor: '#8B1A2A',
+                    borderColor: '#5C0F1B',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { beginAtZero: true, title: { display: true, text: 'Total Deaths (2020-2025)' } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

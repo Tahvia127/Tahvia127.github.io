@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Geography of Rights | La'Tahvia Williams</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="project-styles.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <nav aria-label="Site navigation">
+        <a href="index.html" class="nav-logo">La'Tahvia Williams</a>
+        <div class="nav-links">
+            <a href="index.html">Portfolio</a>
+        </div>
+    </nav>
+
+    <header class="hero" id="main-content">
+        <div class="hero-inner">
+            <p class="category">Data &amp; Policy</p>
+            <h1>The Geography of Rights:<br><em>A 50-State Human Rights Index</em></h1>
+            <p class="subtitle">A composite index scoring all 50 U.S. states on their protection of human rights across reproductive rights, LGBTQ+ protections, voting access, labor rights, and criminal justice — paired with regression analysis of what actually drives those scores.</p>
+            <div class="hero-meta">
+                <div class="hero-meta-item">
+                    <p class="hero-meta-label">Role</p>
+                    <p class="hero-meta-value">Project Manager · Tech Lead</p>
+                </div>
+                <div class="hero-meta-item">
+                    <p class="hero-meta-label">Team</p>
+                    <p class="hero-meta-value">3 (PM + 2 researchers)</p>
+                </div>
+                <div class="hero-meta-item">
+                    <p class="hero-meta-label">Org</p>
+                    <p class="hero-meta-value">UChicago Data Science Society</p>
+                </div>
+                <div class="hero-meta-item">
+                    <p class="hero-meta-label">Term</p>
+                    <p class="hero-meta-value">Spring 2026 · 9 weeks</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content-body" class="body-section">
+        <div class="body-inner">
+            <p class="section-label">Overview</p>
+            <h2>What does it actually mean to <em>live</em> in a high-rights state?</h2>
+            <p>Most rights trackers cover one issue at a time. This project aggregates pre-scored data from Guttmacher, MAP, Brennan Center, Oxfam, the Sentencing Project, and others into a single composite Human Rights Policy Index — then tests, with regression, whether political lean, income, urbanization, and demographics actually explain the variation.</p>
+
+            <h3>Five dimensions, scored 0–100</h3>
+            <div class="dim-grid">
+                <div class="dim"><h4>Reproductive Rights</h4><p>Abortion legality, shield laws, contraceptive coverage, parental involvement.</p></div>
+                <div class="dim"><h4>LGBTQ+ Protections</h4><p>MAP policy tally, nondiscrimination, conversion therapy bans, gender-affirming care.</p></div>
+                <div class="dim"><h4>Voting Access</h4><p>Brennan Center restrictive vs. expansive law counts, voter ID, mail-in access.</p></div>
+                <div class="dim"><h4>Labor Rights</h4><p>Oxfam BSWI score, minimum wage, paid leave, right-to-work status.</p></div>
+                <div class="dim"><h4>Criminal Justice</h4><p>Death penalty, cash bail reform, private prison bans, felony disenfranchisement.</p></div>
+            </div>
+
+            <h3>Methodological choices that matter</h3>
+            <ul>
+                <li>Min-max normalization (0–100) for transparency over z-scores.</li>
+                <li>Equal weighting baseline <em>and</em> PCA-derived weights — the comparison is itself a finding.</li>
+                <li>Composite index used as the dependent variable in OLS regression on political and demographic predictors.</li>
+                <li>Spearman rank correlations for robustness against outlier states.</li>
+            </ul>
+
+            <h3>Deliverables</h3>
+            <ul>
+                <li>Executed Jupyter notebook with full analysis pipeline</li>
+                <li>Single-page interactive HTML dashboard (embedded JSON, Chart.js)</li>
+                <li>Choropleth maps and per-state radar comparisons</li>
+                <li>Written methodology + findings report</li>
+                <li>Presentation at the DSS Quarterly Showcase</li>
+            </ul>
+
+            <h3>Tech stack</h3>
+            <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">pandas</span>
+                <span class="tech-tag">scikit-learn (PCA)</span>
+                <span class="tech-tag">statsmodels (OLS)</span>
+                <span class="tech-tag">scipy</span>
+                <span class="tech-tag">Altair</span>
+                <span class="tech-tag">Chart.js</span>
+            </div>
+        </div>
+    </main>
+
+    <section class="cta">
+        <h2>Curious about the methodology?</h2>
+        <p>The full notebook, dashboard, and data dictionaries live on GitHub.</p>
+        <div class="cta-buttons">
+            <a href="https://github.com/Tahvia127" target="_blank" rel="noopener noreferrer" class="btn primary">View on GitHub</a>
+            <a href="index.html" class="btn">Back to Portfolio</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 La'Tahvia Williams &middot; <a href="mailto:williamstahvia@gmail.com">williamstahvia@gmail.com</a></p>
+        <p style="margin-top:0.5rem;"><a href="index.html" style="font-size:0.78rem;text-transform:uppercase;letter-spacing:2px;">Back to Portfolio</a></p>
+    </footer>
+</body>
+</html>

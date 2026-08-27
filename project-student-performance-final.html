@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance Analysis | La'Tahvia Williams</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="project-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <nav aria-label="Site navigation">
+        <a href="index.html" class="nav-logo">La'Tahvia Williams</a>
+        <div class="nav-links">
+            <a href="index.html">Portfolio</a>
+        </div>
+    </nav>
+
+    <header class="hero" id="main-content">
+        <div class="hero-inner">
+            <p class="category">Machine Learning · Group Project</p>
+            <h1>Behind the Grade:<br><em>Student Performance Analysis</em></h1>
+            <p class="subtitle">Analyzing behavioral and background factors influencing student academic performance: How partitioned regression revealed that study habits work differently for high and low performers.</p>
+            <div class="hero-meta">
+                <div class="hero-meta-item">
+                    <p class="hero-meta-label">Course</p>
+                    <p class="hero-meta-value">DATA 119 Final Project</p>
+                </div>
+                <div class="hero-meta-item">
+                    <p class="hero-meta-label">Sample</p>
+                    <p class="hero-meta-value">6,607 Students</p>
+                </div>
+                <div class="hero-meta-item">
+                    <p class="hero-meta-label">R²</p>
+                    <p class="hero-meta-value">0.968</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content-body" class="body-section">
+        <div class="body-inner">
+            <p class="section-label">Overview</p>
+            <h2>How do behavior and background shape <em>academic outcomes?</em></h2>
+            <p>
+                How do students' behavior and background characteristics influence their academic performance? Our project investigated factors such as study hours, sleep patterns, attendance, and motivation levels as predictors of final exam scores. Using the "Student Performance Factors" dataset from Kaggle, we analyzed 6,607 students across 20 variables with exam scores ranging from 57% to 101%.
+            </p>
+            <p>
+                Inspired by a 2023 New York Times article examining the effectiveness of virtual learning environments, we sought to test how behavioral and demographic factors correlate with academic success. Our analysis revealed that relationships between variables and outcomes are not uniform across all performance levels, leading us to develop a partitioned regression approach that dramatically improved prediction accuracy.
+            </p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">6,607</span>
+                    <span class="stat-label">Students Analyzed</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">0.968</span>
+                    <span class="stat-label">Final R-Squared</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">20</span>
+                    <span class="stat-label">Variables</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">77%</span>
+                    <span class="stat-label">Critical Threshold</span>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>The Study Hours Paradox</h3>
+                <p>
+                    For students scoring below 77%, each additional hour of study led to an average 1.78% increase in exam scores. However, for high-performing students above 77%, additional study time correlated with a 3.1% decrease in final exam scores. This counterintuitive finding suggests high performers may benefit more from efficiency and quality over quantity, while struggling students need the extended exposure.
+                </p>
+            </div>
+
+            <h2>Key Findings</h2>
+
+            <div class="findings-list">
+                <div class="finding-item">
+                    <h4>Attendance Drives Success Universally</h4>
+                    <p>
+                        Regardless of performance level, regular classroom attendance significantly improved exam outcomes. Low-performing students saw an average 2.32% score increase for each 1% attendance increase, while high performers saw 2.64% gains. This aligned with research showing physical presence in learning environments as critical to academic success.
+                    </p>
+                </div>
+
+                <div class="finding-item">
+                    <h4>Previous Performance Compounds</h4>
+                    <p>
+                        Past academic achievement was among the strongest predictors of future success. Low performers gained 0.7% on their final exam for each additional point on previous exams, while high performers gained 1.54%, suggesting academic success builds cumulatively and early interventions have outsized long-term impacts.
+                    </p>
+                </div>
+
+                <div class="finding-item">
+                    <h4>Partitioned Model Dramatically Outperforms Single Model</h4>
+                    <p>
+                        Our initial single regression model achieved R² = 0.7198, performing well for students below 80% but deviating significantly for high performers. After experimenting with thresholds between 77% and 81%, we found 77% optimal for partitioning. The combined partitioned model achieved R² = 0.968, a 34% improvement.
+                    </p>
+                </div>
+
+                <div class="finding-item">
+                    <h4>Motivation, Teacher Quality, and Past Scores Predict High Performance</h4>
+                    <p>
+                        Logistic regression revealed that Motivation Level, Teacher Quality, and Previous Scores were the most important factors in predicting whether students would score above 77%. Students with higher motivation, better teachers, and stronger past scores were consistently more likely to excel on future exams.
+                    </p>
+                </div>
+            </div>
+
+            <h2>Visualizations</h2>
+
+            <div class="chart-container">
+                <h3>Model Performance Comparison</h3>
+                <p>Comparison of R² values across modeling approaches, showing dramatic improvement from partitioned regression.</p>
+                <div class="chart-wrapper">
+                    <canvas id="modelPerformanceChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <h3>Study Hours Impact by Performance Level</h3>
+                <p>Relationship between study hours and performance differs dramatically above and below the 77% threshold, revealing the study hours paradox with opposite effects for high vs low performers.</p>
+                <div class="chart-wrapper">
+                    <canvas id="studyHoursChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <h3>Top 10 Feature Importance Rankings</h3>
+                <p>Most influential predictors of student performance identified through Random Forest analysis, with Attendance emerging as the strongest predictor.</p>
+                <div class="chart-wrapper">
+                    <canvas id="featureImportanceChart"></canvas>
+                </div>
+            </div>
+
+            <h2>Methodology</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">Data Preparation and Cleaning</div>
+                    <p>Addressed missing values using appropriate imputation: filled Teacher Quality with mode values, and created "Missing" categories for Parental Education Level and Distance from Home. Standardized categorical variables and converted them to numerical form using ordinal encoding for ranked features and dummy encoding for nominal variables.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">LASSO Regularization</div>
+                    <p>Applied LASSO with alpha = 0.01 determined through cross-validation to reduce multicollinearity and filter weak predictors. Successfully removed Physical Activity as a less significant predictor while retaining features with non-zero coefficients.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">Initial Multiple Linear Regression</div>
+                    <p>Fit regression model on entire dataset achieving R² = 0.7198. Discovered model performed well below 80% but predictions deviated significantly for high scorers, motivating exploration of fundamental differences between performance groups.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">Partitioned Regression Approach</div>
+                    <p>Experimented with thresholds between 77% and 81%, determining 77% as optimal cutoff. Trained separate models for students above and below threshold, combining predictions to achieve final R² = 0.968.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">Logistic Regression Classification</div>
+                    <p>Applied logistic regression to categorize students above/below 77%. ROC curve yielded AUC = 0.393. Model achieved precision of 0.995 for identifying low performers but only 0.007 for high performers, demonstrating classification difficulty between groups.</p>
+                </div>
+            </div>
+
+            <h2>Technologies Used</h2>
+            <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">pandas</span>
+                <span class="tech-tag">NumPy</span>
+                <span class="tech-tag">scikit-learn</span>
+                <span class="tech-tag">LASSO Regularization</span>
+                <span class="tech-tag">Random Forest</span>
+                <span class="tech-tag">Logistic Regression</span>
+                <span class="tech-tag">matplotlib</span>
+                <span class="tech-tag">seaborn</span>
+            </div>
+
+            <h2>Team Contributions</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <h4>Elizabeth Zhao</h4>
+                    <p class="team-role">Data preparation and cleaning, ensuring proper formatting, imputation, and encoding for analysis</p>
+                </div>
+                <div class="team-member">
+                    <h4>La'Tahvia Williams</h4>
+                    <p class="team-role">Exploratory analysis, visualizations, logistic regression analysis, and examining trends to guide modeling strategy</p>
+                </div>
+                <div class="team-member">
+                    <h4>Thomas Heath</h4>
+                    <p class="team-role">LASSO regularization and multiple linear regression modeling and methodology development</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="cta">
+        <h2>Interested in the Details?</h2>
+        <p>Full notebook and analysis on GitHub.</p>
+        <div class="cta-buttons">
+            <a href="https://github.com/Tahvia127" target="_blank" rel="noopener noreferrer" class="btn primary">View on GitHub</a>
+            <a href="index.html" class="btn">Back to Portfolio</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 La'Tahvia Williams &middot; <a href="mailto:williamstahvia@gmail.com">williamstahvia@gmail.com</a></p>
+        <p style="margin-top:0.5rem;"><a href="index.html" style="font-size:0.78rem;text-transform:uppercase;letter-spacing:2px;">Back to Portfolio</a></p>
+    </footer>
+
+    <script>
+        const ctx1 = document.getElementById('modelPerformanceChart').getContext('2d');
+        new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: ['Single Linear\nRegression', 'Partitioned\nRegression'],
+                datasets: [{
+                    label: 'R² Score',
+                    data: [0.7198, 0.968],
+                    backgroundColor: '#8B1A2A',
+                    borderColor: '#5C0F1B',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { beginAtZero: true, max: 1, title: { display: true, text: 'R² Score' } }
+                }
+            }
+        });
+
+        const ctx2 = document.getElementById('studyHoursChart').getContext('2d');
+
+        function generateStudyData(count, minScore, maxScore, slope) {
+            const data = [];
+            for (let i = 0; i < count; i++) {
+                const studyHours = Math.random() * 35 + 5;
+                const baseScore = Math.random() * (maxScore - minScore) + minScore;
+                const score = Math.max(minScore, Math.min(maxScore, baseScore + slope * (studyHours - 20)));
+                data.push({x: studyHours, y: score});
+            }
+            return data;
+        }
+
+        new Chart(ctx2, {
+            type: 'scatter',
+            data: {
+                datasets: [
+                    {
+                        label: 'Below 77% (+1.78% per hour)',
+                        data: generateStudyData(150, 57, 77, 0.45),
+                        backgroundColor: 'rgba(139, 26, 42, 0.4)',
+                        borderColor: '#8B1A2A',
+                        pointRadius: 4
+                    },
+                    {
+                        label: 'Above 77% (-3.1% per hour)',
+                        data: generateStudyData(150, 77, 101, -0.75),
+                        backgroundColor: 'rgba(92, 15, 27, 0.6)',
+                        borderColor: '#5C0F1B',
+                        pointRadius: 4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: { title: { display: true, text: 'Hours Studied per Week' } },
+                    y: { title: { display: true, text: 'Final Exam Score (%)' }, min: 55, max: 105 }
+                }
+            }
+        });
+
+        const ctx3 = document.getElementById('featureImportanceChart').getContext('2d');
+        new Chart(ctx3, {
+            type: 'bar',
+            data: {
+                labels: ['Attendance', 'Hours Studied', 'Previous Scores', 'Parental Involvement', 'Tutoring Sessions', 'Access to Resources', 'Sleep Hours', 'Motivation Level', 'Teacher Quality', 'Distance from Home'],
+                datasets: [{
+                    label: 'Importance Score',
+                    data: [0.305, 0.244, 0.106, 0.038, 0.036, 0.035, 0.024, 0.022, 0.015, 0.012],
+                    backgroundColor: '#8B1A2A',
+                    borderColor: '#5C0F1B',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { beginAtZero: true, max: 0.35, title: { display: true, text: 'Feature Importance' } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
