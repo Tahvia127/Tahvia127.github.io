@@ -162,3 +162,23 @@ a{color:inherit;text-decoration:none}
   .hero-meta{gap:1.6rem}
   .card:nth-child(3n)::before{display:none}
 }
+
+/* ---------- featured project ---------- */
+@media(min-width:760px){
+  .card-feature{grid-column:span 2}
+  .card-feature h3{font-size:2.15rem}
+  .card-feature p{font-size:1.02rem;max-width:60ch}
+}
+.card-feature{border-color:rgba(154,120,48,.34);background:
+  linear-gradient(180deg,rgba(201,168,99,.07),transparent 42%),var(--card)}
+.card-feature::after{content:'Featured';position:absolute;top:1.1rem;right:1.3rem;
+  font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);
+  border:1px solid var(--gold-soft);border-radius:999px;padding:.2rem .6rem}
+
+/* ---------- alternating section ground ---------- */
+.section-alt{background:var(--paper-2)}
+
+/* ---------- grouped toolkit chips ---------- */
+.chip-group + .chip-group{margin-top:1.15rem}
+.chip-label{font-size:.63rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink-faint);margin:0 0 .5rem}

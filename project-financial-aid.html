@@ -158,19 +158,19 @@
                 <div style="background: var(--cream-dark); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
                     <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
                         <div style="display: flex; align-items: center; gap: 0.5rem;">
-                            <div style="width: 20px; height: 20px; background: #70AD47; border-radius: 3px;"></div>
+                            <div style="width: 20px; height: 20px; background: #6F7F63; border-radius: 3px;"></div>
                             <span style="font-size: 0.9rem;">Full Free (No Loans)</span>
                         </div>
                         <div style="display: flex; align-items: center; gap: 0.5rem;">
-                            <div style="width: 20px; height: 20px; background: #FFC000; border-radius: 3px;"></div>
+                            <div style="width: 20px; height: 20px; background: #C9A863; border-radius: 3px;"></div>
                             <span style="font-size: 0.9rem;">Free Tuition</span>
                         </div>
                         <div style="display: flex; align-items: center; gap: 0.5rem;">
-                            <div style="width: 20px; height: 20px; background: #D9534F; border-radius: 3px;"></div>
+                            <div style="width: 20px; height: 20px; background: #A96F5F; border-radius: 3px;"></div>
                             <span style="font-size: 0.9rem;">Aid with Loans</span>
                         </div>
                         <div style="display: flex; align-items: center; gap: 0.5rem;">
-                            <div style="width: 20px; height: 20px; background: #D9D9D9; border-radius: 3px;"></div>
+                            <div style="width: 20px; height: 20px; background: #C9C2B4; border-radius: 3px;"></div>
                             <span style="font-size: 0.9rem;">Aid Available</span>
                         </div>
                     </div>
@@ -315,7 +315,7 @@
             "encoding": {
                 "y": {"field": "Institution", "type": "nominal", "sort": {"field": "NetPrice"}, "title": null, "axis": {"labelFontSize": 13}},
                 "x": {"field": "NetPrice", "type": "quantitative", "title": "Average Net Price ($)", "axis": {"format": "$,.0f", "grid": true, "gridColor": "#eee", "labelFontSize": 11}},
-                "color": {"condition": {"test": "datum.IsUChicago", "value": "#8B1A2A"}, "value": "#4472C4"},
+                "color": {"condition": {"test": "datum.IsUChicago", "value": "#415871"}, "value": "#5A7D9A"},
                 "tooltip": [{"field": "Institution", "title": "School"}, {"field": "NetPrice", "title": "Net Price", "format": "$,.0f"}]
             },
             "width": "container", "height": 300
@@ -339,7 +339,7 @@
             "encoding": {
                 "y": {"field": "Institution", "type": "nominal", "sort": {"field": "Threshold"}, "title": null, "axis": {"labelFontSize": 13}},
                 "x": {"field": "Threshold", "type": "quantitative", "title": "Free Tuition Threshold ($)", "axis": {"format": "$,.0f", "grid": true, "gridColor": "#eee", "labelFontSize": 11}},
-                "color": {"condition": {"test": "datum.IsUChicago", "value": "#8B1A2A"}, "value": "#FFC000"},
+                "color": {"condition": {"test": "datum.IsUChicago", "value": "#415871"}, "value": "#C9A863"},
                 "tooltip": [{"field": "Institution", "title": "School"}, {"field": "Threshold", "title": "Threshold", "format": "$,.0f"}]
             },
             "width": "container", "height": 350
@@ -349,51 +349,51 @@
             "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
             "title": null,
             "data": {"values": [
-                {"Institution": "Princeton", "Income": "<$60k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
-                {"Institution": "Princeton", "Income": "$60-$100k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
-                {"Institution": "Princeton", "Income": "$100-$150k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
-                {"Institution": "Princeton", "Income": "$150k-$200k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
-                {"Institution": "Princeton", "Income": "$200k+", "Coverage": "Grants Only", "Color": "#70AD47"},
-                {"Institution": "MIT", "Income": "<$60k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
-                {"Institution": "MIT", "Income": "$60-$100k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
-                {"Institution": "MIT", "Income": "$100-$150k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
-                {"Institution": "MIT", "Income": "$150k-$200k", "Coverage": "Free Tuition", "Color": "#FFC000"},
-                {"Institution": "MIT", "Income": "$200k+", "Coverage": "Aid Available", "Color": "#D9D9D9"},
-                {"Institution": "Harvard", "Income": "<$60k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
-                {"Institution": "Harvard", "Income": "$60-$100k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
-                {"Institution": "Harvard", "Income": "$100-$150k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
-                {"Institution": "Harvard", "Income": "$150k-$200k", "Coverage": "Free Tuition", "Color": "#FFC000"},
-                {"Institution": "Harvard", "Income": "$200k+", "Coverage": "Aid Available", "Color": "#D9D9D9"},
-                {"Institution": "Duke", "Income": "<$60k", "Coverage": "Full Need Met", "Color": "#70AD47"},
-                {"Institution": "Duke", "Income": "$60-$100k", "Coverage": "Full Need Met", "Color": "#70AD47"},
-                {"Institution": "Duke", "Income": "$100-$150k", "Coverage": "Full Need Met", "Color": "#70AD47"},
-                {"Institution": "Duke", "Income": "$150k-$200k", "Coverage": "Full Need Met", "Color": "#70AD47"},
-                {"Institution": "Duke", "Income": "$200k+", "Coverage": "Aid w/ Loans", "Color": "#D9534F"},
-                {"Institution": "Penn", "Income": "<$60k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
-                {"Institution": "Penn", "Income": "$60-$100k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
-                {"Institution": "Penn", "Income": "$100-$150k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
-                {"Institution": "Penn", "Income": "$150k-$200k", "Coverage": "Free Tuition", "Color": "#FFC000"},
-                {"Institution": "Penn", "Income": "$200k+", "Coverage": "Aid w/ Loans", "Color": "#D9534F"},
-                {"Institution": "Stanford", "Income": "<$60k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
-                {"Institution": "Stanford", "Income": "$60-$100k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
-                {"Institution": "Stanford", "Income": "$100-$150k", "Coverage": "Free Tuition", "Color": "#FFC000"},
-                {"Institution": "Stanford", "Income": "$150k-$200k", "Coverage": "Free Tuition", "Color": "#FFC000"},
-                {"Institution": "Stanford", "Income": "$200k+", "Coverage": "Aid w/ Loans", "Color": "#D9534F"},
-                {"Institution": "UChicago", "Income": "<$60k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
-                {"Institution": "UChicago", "Income": "$60-$100k", "Coverage": "Free Tuition", "Color": "#FFC000"},
-                {"Institution": "UChicago", "Income": "$100-$150k", "Coverage": "Free Tuition", "Color": "#FFC000"},
-                {"Institution": "UChicago", "Income": "$150k-$200k", "Coverage": "Free Tuition", "Color": "#FFC000"},
-                {"Institution": "UChicago", "Income": "$200k+", "Coverage": "Aid w/ Loans", "Color": "#D9534F"},
-                {"Institution": "Johns Hopkins", "Income": "<$60k", "Coverage": "Full Need Met", "Color": "#70AD47"},
-                {"Institution": "Johns Hopkins", "Income": "$60-$100k", "Coverage": "Full Need Met", "Color": "#70AD47"},
-                {"Institution": "Johns Hopkins", "Income": "$100-$150k", "Coverage": "Aid w/ Loans", "Color": "#D9534F"},
-                {"Institution": "Johns Hopkins", "Income": "$150k-$200k", "Coverage": "Aid w/ Loans", "Color": "#D9534F"},
-                {"Institution": "Johns Hopkins", "Income": "$200k+", "Coverage": "Aid w/ Loans", "Color": "#D9534F"},
-                {"Institution": "Yale", "Income": "<$60k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
-                {"Institution": "Yale", "Income": "$60-$100k", "Coverage": "Full Free (No Loans)", "Color": "#70AD47"},
-                {"Institution": "Yale", "Income": "$100-$150k", "Coverage": "Aid w/ Loans", "Color": "#D9534F"},
-                {"Institution": "Yale", "Income": "$150k-$200k", "Coverage": "Aid w/ Loans", "Color": "#D9534F"},
-                {"Institution": "Yale", "Income": "$200k+", "Coverage": "Aid w/ Loans", "Color": "#D9534F"}
+                {"Institution": "Princeton", "Income": "<$60k", "Coverage": "Full Free (No Loans)", "Color": "#6F7F63"},
+                {"Institution": "Princeton", "Income": "$60-$100k", "Coverage": "Full Free (No Loans)", "Color": "#6F7F63"},
+                {"Institution": "Princeton", "Income": "$100-$150k", "Coverage": "Full Free (No Loans)", "Color": "#6F7F63"},
+                {"Institution": "Princeton", "Income": "$150k-$200k", "Coverage": "Full Free (No Loans)", "Color": "#6F7F63"},
+                {"Institution": "Princeton", "Income": "$200k+", "Coverage": "Grants Only", "Color": "#6F7F63"},
+                {"Institution": "MIT", "Income": "<$60k", "Coverage": "Full Free (No Loans)", "Color": "#6F7F63"},
+                {"Institution": "MIT", "Income": "$60-$100k", "Coverage": "Full Free (No Loans)", "Color": "#6F7F63"},
+                {"Institution": "MIT", "Income": "$100-$150k", "Coverage": "Full Free (No Loans)", "Color": "#6F7F63"},
+                {"Institution": "MIT", "Income": "$150k-$200k", "Coverage": "Free Tuition", "Color": "#C9A863"},
+                {"Institution": "MIT", "Income": "$200k+", "Coverage": "Aid Available", "Color": "#C9C2B4"},
+                {"Institution": "Harvard", "Income": "<$60k", "Coverage": "Full Free (No Loans)", "Color": "#6F7F63"},
+                {"Institution": "Harvard", "Income": "$60-$100k", "Coverage": "Full Free (No Loans)", "Color": "#6F7F63"},
+                {"Institution": "Harvard", "Income": "$100-$150k", "Coverage": "Full Free (No Loans)", "Color": "#6F7F63"},
+                {"Institution": "Harvard", "Income": "$150k-$200k", "Coverage": "Free Tuition", "Color": "#C9A863"},
+                {"Institution": "Harvard", "Income": "$200k+", "Coverage": "Aid Available", "Color": "#C9C2B4"},
+                {"Institution": "Duke", "Income": "<$60k", "Coverage": "Full Need Met", "Color": "#6F7F63"},
+                {"Institution": "Duke", "Income": "$60-$100k", "Coverage": "Full Need Met", "Color": "#6F7F63"},
+                {"Institution": "Duke", "Income": "$100-$150k", "Coverage": "Full Need Met", "Color": "#6F7F63"},
+                {"Institution": "Duke", "Income": "$150k-$200k", "Coverage": "Full Need Met", "Color": "#6F7F63"},
+                {"Institution": "Duke", "Income": "$200k+", "Coverage": "Aid w/ Loans", "Color": "#A96F5F"},
+                {"Institution": "Penn", "Income": "<$60k", "Coverage": "Full Free (No Loans)", "Color": "#6F7F63"},
+                {"Institution": "Penn", "Income": "$60-$100k", "Coverage": "Full Free (No Loans)", "Color": "#6F7F63"},
+                {"Institution": "Penn", "Income": "$100-$150k", "Coverage": "Full Free (No Loans)", "Color": "#6F7F63"},
+                {"Institution": "Penn", "Income": "$150k-$200k", "Coverage": "Free Tuition", "Color": "#C9A863"},
+                {"Institution": "Penn", "Income": "$200k+", "Coverage": "Aid w/ Loans", "Color": "#A96F5F"},
+                {"Institution": "Stanford", "Income": "<$60k", "Coverage": "Full Free (No Loans)", "Color": "#6F7F63"},
+                {"Institution": "Stanford", "Income": "$60-$100k", "Coverage": "Full Free (No Loans)", "Color": "#6F7F63"},
+                {"Institution": "Stanford", "Income": "$100-$150k", "Coverage": "Free Tuition", "Color": "#C9A863"},
+                {"Institution": "Stanford", "Income": "$150k-$200k", "Coverage": "Free Tuition", "Color": "#C9A863"},
+                {"Institution": "Stanford", "Income": "$200k+", "Coverage": "Aid w/ Loans", "Color": "#A96F5F"},
+                {"Institution": "UChicago", "Income": "<$60k", "Coverage": "Full Free (No Loans)", "Color": "#6F7F63"},
+                {"Institution": "UChicago", "Income": "$60-$100k", "Coverage": "Free Tuition", "Color": "#C9A863"},
+                {"Institution": "UChicago", "Income": "$100-$150k", "Coverage": "Free Tuition", "Color": "#C9A863"},
+                {"Institution": "UChicago", "Income": "$150k-$200k", "Coverage": "Free Tuition", "Color": "#C9A863"},
+                {"Institution": "UChicago", "Income": "$200k+", "Coverage": "Aid w/ Loans", "Color": "#A96F5F"},
+                {"Institution": "Johns Hopkins", "Income": "<$60k", "Coverage": "Full Need Met", "Color": "#6F7F63"},
+                {"Institution": "Johns Hopkins", "Income": "$60-$100k", "Coverage": "Full Need Met", "Color": "#6F7F63"},
+                {"Institution": "Johns Hopkins", "Income": "$100-$150k", "Coverage": "Aid w/ Loans", "Color": "#A96F5F"},
+                {"Institution": "Johns Hopkins", "Income": "$150k-$200k", "Coverage": "Aid w/ Loans", "Color": "#A96F5F"},
+                {"Institution": "Johns Hopkins", "Income": "$200k+", "Coverage": "Aid w/ Loans", "Color": "#A96F5F"},
+                {"Institution": "Yale", "Income": "<$60k", "Coverage": "Full Free (No Loans)", "Color": "#6F7F63"},
+                {"Institution": "Yale", "Income": "$60-$100k", "Coverage": "Full Free (No Loans)", "Color": "#6F7F63"},
+                {"Institution": "Yale", "Income": "$100-$150k", "Coverage": "Aid w/ Loans", "Color": "#A96F5F"},
+                {"Institution": "Yale", "Income": "$150k-$200k", "Coverage": "Aid w/ Loans", "Color": "#A96F5F"},
+                {"Institution": "Yale", "Income": "$200k+", "Coverage": "Aid w/ Loans", "Color": "#A96F5F"}
             ]},
             "mark": {"type": "rect", "stroke": "#fff", "strokeWidth": 1},
             "encoding": {
