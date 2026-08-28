@@ -71,7 +71,7 @@ a{color:inherit;text-decoration:none}
 .section{padding:clamp(3.5rem,8vw,6rem) 0}
 .section-alt{background:var(--paper-2);border-block:1px solid var(--rule)}
 .head{margin-bottom:3rem;text-align:center}
-.head .label{font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--faint);margin:0 0 .9rem}
+.head .label{font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--faint);margin:0 0 .9rem;max-width:none;text-indent:.3em}
 .head h2{font-family:var(--f-s);font-weight:400;font-size:clamp(2.6rem,6vw,4.2rem);line-height:1;margin:0}
 .head p{max-width:56ch;margin:1.5rem auto 0;color:var(--soft)}
 
@@ -122,8 +122,8 @@ a{color:inherit;text-decoration:none}
   text-transform:uppercase;color:var(--accent);border:1px solid currentColor;border-radius:999px;padding:.2rem .65rem}
 
 /* ---------- about ---------- */
-.about .shell{display:grid;gap:clamp(2.2rem,6vw,4.5rem);grid-template-columns:1fr}
-@media(min-width:880px){.about .shell{grid-template-columns:.8fr 1.2fr;align-items:center}}
+.about .about-grid{display:grid;gap:clamp(2.2rem,6vw,4.5rem);grid-template-columns:1fr}
+@media(min-width:880px){.about .about-grid{grid-template-columns:.8fr 1.2fr;align-items:center}}
 .photo{position:relative;background:var(--paper-2);border:1px solid var(--rule);aspect-ratio:4/5;
   display:grid;place-items:center;overflow:hidden;transform:rotate(-1.5deg);
   transition:transform .7s var(--e),box-shadow .7s var(--e);box-shadow:0 16px 40px -28px rgba(17,16,16,.5)}
@@ -199,7 +199,7 @@ a{color:inherit;text-decoration:none}
   <div class="shell">
     <ul><li><a href="#about">About</a></li><li><a href="#work">Work</a></li></ul>
     <a class="brand" href="#top">La&rsquo;Tahvia Williams</a>
-    <ul class="r"><li><a href="#work">Projects</a></li><li><a href="#contact">Contact</a></li></ul>
+    <ul class="r"><li><a href="Tahvia-Williams-Resume.pdf" target="_blank" rel="noopener noreferrer">R&eacute;sum&eacute;</a></li><li><a href="#contact">Contact</a></li></ul>
   </div>
 </header>
 
@@ -219,12 +219,17 @@ a{color:inherit;text-decoration:none}
 
 <section class="section about" id="about">
   <div class="shell">
+    <div class="head rv">
+      <p class="label">About</p>
+      <h2>About me</h2>
+    </div>
+  </div>
+  <div class="shell about-grid">
     <div class="photo rv" id="photo">
       <img src="photos/portrait.webp" alt="La'Tahvia Williams" id="portrait" width="576" height="576">
       <span class="badge">Open to<br>2027 roles</span>
     </div>
     <div class="rv">
-      <h2>About me</h2>
       <p>I&rsquo;m a data science and public policy student at the University of Chicago. Most of my work sits where policy questions meet messy real-world data: conflict records, sentencing files, census tracts, healthcare payments. The through-line is using data to make something invisible visible.</p>
       <p>I also design. Writing for <em>The Chicago Maroon</em> taught me that an argument nobody finishes reading isn&rsquo;t an argument, and that shaped how I build everything since: the model has to be right, and the result has to land.</p>
       <p>Outside the analysis, I&rsquo;ve led campus initiatives, mentored over a hundred students, and managed teams as project manager and tech lead on multi-quarter research projects.</p>
@@ -234,7 +239,7 @@ a{color:inherit;text-decoration:none}
         <p class="tl">Design</p><ul><li>Figma</li><li>Illustrator</li><li>InDesign</li><li>Photoshop</li><li>WordPress</li></ul>
       </div>
       <div class="mini">
-        <div><b>19</b><span>Projects</span></div><div><b>4</b><span>Internships</span></div>
+        <div><b>19</b><span>Projects</span></div><div><b>5</b><span>Roles held</span></div>
         <div><b>6+</b><span>Leadership</span></div><div><b>100+</b><span>Mentored</span></div>
       </div>
     </div>
@@ -267,6 +272,7 @@ a{color:inherit;text-decoration:none}
       <a class="gold" href="mailto:williamstahvia@gmail.com">Email me</a>
       <a href="https://www.linkedin.com/in/la-tahvia-williams-805a96246" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <a href="https://github.com/Tahvia127" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="Tahvia-Williams-Resume.pdf" target="_blank" rel="noopener noreferrer">R&eacute;sum&eacute;</a>
     </div>
   </div>
 </section>
