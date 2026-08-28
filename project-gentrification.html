@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapping Gentrification | La'Tahvia Williams</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="project-styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<nav aria-label="Site navigation">
+  <a href="index.html" class="nav-logo">La'Tahvia Williams</a>
+  <div class="nav-links"><a href="index.html">Portfolio</a></div>
+</nav>
+
+<header class="hero" id="main-content">
+  <div class="hero-inner">
+    <p class="category">Data Storytelling &middot; Human Rights</p>
+    <h1>Mapping Gentrification:<br><em>who left, and what it cost</em></h1>
+    <p class="subtitle">Census-tract analysis of five American cities, pairing demographic change against home-value change so displacement and appreciation can be read together rather than separately.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><p class="hero-meta-label">Course</p><p class="hero-meta-value">DATA 23700</p></div>
+      <div class="hero-meta-item"><p class="hero-meta-label">Cities</p><p class="hero-meta-value">5</p></div>
+      <div class="hero-meta-item"><p class="hero-meta-label">Unit</p><p class="hero-meta-value">Census tract</p></div>
+      <div class="hero-meta-item"><p class="hero-meta-label">Stack</p><p class="hero-meta-value">GeoPandas &middot; Altair</p></div>
+    </div>
+  </div>
+</header>
+
+<main id="main-content-body" class="body-section">
+  <div class="body-inner">
+    <p class="section-label">Overview</p>
+    <h2>Gentrification is usually described. <em>Here it is measured.</em></h2>
+    <p>Atlanta, Baltimore, New York City, Oakland and Washington, D.C., analysed at census-tract level. The argument of the piece is that demographic change and economic change have to be read against each other: a tract where home values doubled and composition held is a different story from one where both moved at once, and only the pairing distinguishes them.</p>
+
+    <h3>Which cities were most affected</h3>
+    <p>Ranking the five cities by the share of tracts meeting the gentrification classification gives the shape of the problem before any individual tract is examined.</p>
+    <figure class="fig-wide">
+      <img src="figures/gent-Cities-Most-Affected-by-Gentrification.webp" alt="Bar chart ranking cities most affected by gentrification" loading="lazy">
+      <figcaption>Cities ranked by share of gentrifying tracts.</figcaption>
+    </figure>
+
+    <h3>The central relationship</h3>
+    <p>This is the analytical centre of the piece: demographic change plotted against home-value change, one point per tract. The spread matters as much as the trend, because it shows how many tracts appreciated without displacement and how many did both.</p>
+    <figure class="fig-wide">
+      <img src="figures/gent-Relationship--Demographic-Change-vs-Home-Value-Change.webp" alt="Scatter plot of demographic change against home value change by tract" loading="lazy">
+      <figcaption>Demographic change against home-value change, one point per census tract.</figcaption>
+    </figure>
+
+    <h3>Distribution and composition</h3>
+    <div class="fig-grid">
+      <figure><img src="figures/gent-Distribution-of-Demographic-Changes.webp" alt="Distribution of demographic change across tracts" loading="lazy"><figcaption>How demographic change is distributed across tracts.</figcaption></figure>
+      <figure><img src="figures/gent-Demographic-Shifts-in-Gentrified-Atlanta-Neighborhoods.webp" alt="Demographic shifts in gentrified Atlanta neighborhoods" loading="lazy"><figcaption>Composition shifts in Atlanta's gentrifying neighbourhoods.</figcaption></figure>
+      <figure><img src="figures/gent-blackchangemap.webp" alt="Map of change in Black population by tract" loading="lazy"><figcaption>Change in Black population, mapped by tract.</figcaption></figure>
+      <figure><img src="figures/gent-Atlanta-Neighborhood-Status.webp" alt="Map of Atlanta neighborhood gentrification status" loading="lazy"><figcaption>Atlanta tracts by gentrification status.</figcaption></figure>
+    </div>
+
+    <h3>One tract, closely</h3>
+    <p>Aggregates hide people. Census Tract 205 in Atlanta is traced in both demographic and economic terms so the same period can be read as a single neighbourhood's experience rather than a distribution.</p>
+    <div class="fig-grid">
+      <figure><img src="figures/gent-Demographic-Transformation---Census-Tract-205.webp" alt="Demographic transformation of Census Tract 205" loading="lazy"><figcaption>Tract 205, demographic transformation.</figcaption></figure>
+      <figure><img src="figures/gent-Economic-Changes---Census-Tract-205.webp" alt="Economic changes in Census Tract 205" loading="lazy"><figcaption>Tract 205, economic change over the same period.</figcaption></figure>
+    </div>
+
+    <h3>Method</h3>
+    <div class="pipeline">
+      <strong>Sources</strong> &rarr; ACS census-tract tables + tract boundary geometry per city<br>
+      <strong>Classification</strong> &rarr; tracts scored on demographic and home-value movement<br>
+      <strong>Geography</strong> &rarr; GeoPandas joins tract attributes to boundaries<br>
+      <strong>Output</strong> &rarr; static charts plus interactive Altair views
+    </div>
+    <div class="methodology-box">
+      <h4>A note on the classification</h4>
+      <p>"Gentrifying" is a threshold decision, not a fact in the data. The tract-level scatter is included precisely so the threshold can be argued with: the underlying continuum is visible, and a reader who would draw the line elsewhere can see what that would change.</p>
+    </div>
+
+    <h3>Tech stack</h3>
+    <div class="tech-stack">
+      <span class="tech-tag">Python</span><span class="tech-tag">pandas</span><span class="tech-tag">GeoPandas</span>
+      <span class="tech-tag">Altair</span><span class="tech-tag">matplotlib</span><span class="tech-tag">ACS Census Data</span>
+    </div>
+  </div>
+</main>
+
+<section class="cta">
+  <h2>See the notebook</h2>
+  <p>One notebook regenerates every figure on this page, with the tract data and boundaries alongside it.</p>
+  <div class="cta-buttons">
+    <a href="https://github.com/Tahvia127/DataHW5" target="_blank" rel="noopener noreferrer" class="btn primary">View on GitHub</a>
+    <a href="index.html" class="btn">Back to Portfolio</a>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 La'Tahvia Williams &middot; <a href="mailto:williamstahvia@gmail.com">williamstahvia@gmail.com</a></p>
+  <p style="margin-top:0.5rem;"><a href="index.html" style="font-size:0.78rem;text-transform:uppercase;letter-spacing:2px;">Back to Portfolio</a></p>
+</footer>
+</body>
+</html>

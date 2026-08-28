@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Words and Money at ECOSOC | La'Tahvia Williams</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="project-styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<nav aria-label="Site navigation">
+  <a href="index.html" class="nav-logo">La'Tahvia Williams</a>
+  <div class="nav-links"><a href="index.html">Portfolio</a></div>
+</nav>
+
+<header class="hero" id="main-content">
+  <div class="hero-inner">
+    <p class="category">Text as Data &middot; Development Finance</p>
+    <h1>Words and Money at ECOSOC:<br><em>do stated priorities match the spending?</em></h1>
+    <p class="subtitle">A text-as-data study of 26 years of UN Economic and Social Council proceedings, testing whether what ECOSOC talks about predicts what the UN system and the World Bank actually fund.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><p class="hero-meta-label">Course</p><p class="hero-meta-value">BUSN 20800 &middot; Big Data</p></div>
+      <div class="hero-meta-item"><p class="hero-meta-label">Corpus</p><p class="hero-meta-value">~1,200 transcripts</p></div>
+      <div class="hero-meta-item"><p class="hero-meta-label">Projects</p><p class="hero-meta-value">~22,700 World Bank</p></div>
+      <div class="hero-meta-item"><p class="hero-meta-label">Team</p><p class="hero-meta-value">4 researchers</p></div>
+    </div>
+  </div>
+</header>
+
+<main id="main-content-body" class="body-section">
+  <div class="body-inner">
+    <p class="section-label">Overview</p>
+    <h2>Institutions say a great deal. <em>Money says more.</em></h2>
+    <p>International bodies publish their priorities constantly, in speeches, communiqu&eacute;s and summary records. Whether those stated priorities have any relationship to where money actually moves is an empirical question, and one that 26 years of ECOSOC transcripts paired with agency revenue and World Bank lending can answer.</p>
+
+    <div class="stats-grid">
+      <div class="stat-card"><span class="stat-number">1,200</span><span class="stat-label">ECOSOC transcripts</span></div>
+      <div class="stat-card"><span class="stat-number">19</span><span class="stat-label">UN agencies</span></div>
+      <div class="stat-card"><span class="stat-number">22,700</span><span class="stat-label">World Bank projects</span></div>
+      <div class="stat-card"><span class="stat-number">0.094</span><span class="stat-label">best RMSE, OLS +tier2</span></div>
+    </div>
+
+    <h3>Three questions</h3>
+    <ul>
+      <li><strong>Alignment.</strong> Do the themes ECOSOC emphasises in a given year line up with that year's funding allocations?</li>
+      <li><strong>Prediction.</strong> Do text features improve prediction of UN agency revenue over macro controls alone?</li>
+      <li><strong>Comparison.</strong> Does ECOSOC discourse track UN-internal spending more closely than World Bank lending?</li>
+    </ul>
+
+    <h3>The corpus</h3>
+    <p>Roughly 1,200 summary records were harvested from the UN Digital Library covering 2000 to 2026. Transcript count stays broadly stable year to year, but transcript length grows substantially, which matters for any feature that scales with document size.</p>
+    <figure class="fig-wide">
+      <img src="figures/busn-corpus_growth.webp" alt="Chart of ECOSOC corpus growth by year" loading="lazy">
+      <figcaption>Corpus growth. Document count holds steady while length increases, so length-sensitive features need normalising.</figcaption>
+    </figure>
+
+    <h3>What the money does</h3>
+    <p>Two independent funding series sit alongside the text: CEB Financial Statistics for UN agency revenue, and the World Bank Projects API for sector-level lending.</p>
+    <div class="fig-grid">
+      <figure><img src="figures/busn-un_revenue_lines.webp" alt="UN agency revenue over time" loading="lazy"><figcaption>UN agency revenue, 19 ECOSOC-relevant agencies.</figcaption></figure>
+      <figure><img src="figures/busn-un_top_agencies.webp" alt="Top UN agencies by revenue" loading="lazy"><figcaption>Where the money concentrates across agencies.</figcaption></figure>
+      <figure><img src="figures/busn-wb_sector_lines.webp" alt="World Bank lending by sector over time" loading="lazy"><figcaption>World Bank commitments by sector and year.</figcaption></figure>
+      <figure><img src="figures/busn-theme_trends.webp" alt="Theme prevalence in ECOSOC transcripts over time" loading="lazy"><figcaption>Theme prevalence in the transcripts, the discourse side of the comparison.</figcaption></figure>
+    </div>
+
+    <h3>Feature tiers</h3>
+    <p>Text is cleaned with a boilerplate filter, sentence split, and aggregated into year and segment blocks. Features are then built in tiers so each tier's marginal contribution can be isolated rather than entangled.</p>
+    <div class="pipeline">
+      <strong>Tier 1</strong> &rarr; document length + VADER sentiment + 7 policy lexicons<br>
+      <strong>Tier 2</strong> &rarr; TF-IDF over 2,000 unigrams and bigrams<br>
+      <strong>Tier 3</strong> &rarr; all-MiniLM-L6-v2 mean-pooled sentence embeddings
+    </div>
+    <div class="methodology-box">
+      <h4>Why hyperparameters are frozen</h4>
+      <p>Five model classes are fit against each feature set with <strong>hyperparameters held fixed across tiers on purpose</strong>. The goal is a clean ablation showing what the text adds, not a tuned leaderboard. Letting each tier retune would confound "more features" with "better search".</p>
+    </div>
+
+    <h3>Result</h3>
+    <p>Adding text features produces a large, monotonic drop in out-of-sample error on the UN revenue target. For OLS the fall is from 9.079 to 2.824 to 0.094 across the three feature sets, a total reduction of 8.985 and the largest tier gain of any model class.</p>
+    <div class="fig-grid">
+      <figure><img src="figures/busn-supervised_un_rmse_bars_by_model.webp" alt="RMSE by model and feature tier" loading="lazy"><figcaption>RMSE by model and feature tier. Lower is better.</figcaption></figure>
+      <figure><img src="figures/busn-supervised_un_r2_bars_by_model.webp" alt="R squared by model and feature tier" loading="lazy"><figcaption>R&sup2; by model and feature tier, the same story from the other direction.</figcaption></figure>
+    </div>
+    <div class="highlight-box">
+      <h4>The caveat worth stating</h4>
+      <p>An RMSE of 0.094 on a small annual panel is a striking number, and small panels invite overfitting no matter how carefully the ablation is set up. The finding to take away is the <em>direction and size</em> of the tier gain, not the decimal.</p>
+    </div>
+
+    <h3>Tech stack</h3>
+    <div class="tech-stack">
+      <span class="tech-tag">Python</span><span class="tech-tag">pandas</span><span class="tech-tag">scikit-learn</span>
+      <span class="tech-tag">statsmodels</span><span class="tech-tag">VADER</span><span class="tech-tag">TF-IDF</span>
+      <span class="tech-tag">sentence-transformers</span><span class="tech-tag">Altair</span>
+    </div>
+  </div>
+</main>
+
+<section class="cta">
+  <h2>See the analysis</h2>
+  <p>Ten notebooks in dependency order, from API harvest through to the supervised results.</p>
+  <div class="cta-buttons">
+    <a href="https://github.com/Tahvia127/BUSN-20800-Final-Project-" target="_blank" rel="noopener noreferrer" class="btn primary">View on GitHub</a>
+    <a href="index.html" class="btn">Back to Portfolio</a>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 La'Tahvia Williams &middot; <a href="mailto:williamstahvia@gmail.com">williamstahvia@gmail.com</a></p>
+  <p style="margin-top:0.5rem;"><a href="index.html" style="font-size:0.78rem;text-transform:uppercase;letter-spacing:2px;">Back to Portfolio</a></p>
+</footer>
+</body>
+</html>
